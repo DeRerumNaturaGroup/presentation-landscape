@@ -1,0 +1,55 @@
+## Common Myths & Misconceptions in Materials Modeling
+
+### Myth 1: “Simulations are always accurate”
+- Models depend on:
+  - Assumptions
+  - Approximations
+  - Parameter quality
+- **Reality:** All models have limits
+
+---
+
+### Myth 2: “More expensive methods are always better”
+- Higher-level methods cost more computationally
+- May not be necessary for every problem
+- **Reality:** Best method = right balance of accuracy + scale + efficiency
+
+---
+
+### Myth 3: “Modeling replaces experiments”
+- Simulations guide and interpret experiments
+- Experimental validation remains essential
+- **Reality:** Modeling and experiments are complementary
+
+---
+
+### Myth 4: “Coding skill alone makes you a modeler”
+- Software operation ≠ scientific understanding
+- Strong theory and physical intuition are critical
+- **Reality:** Physics first, tools second
+
+---
+
+### Myth 5: “Machine learning will replace physics”
+- ML is powerful but data-dependent
+- Can fail outside training space
+- **Reality:** ML works best when combined with domain knowledge
+
+---
+
+### Common Pitfall
+
+> “Pretty plots do not guarantee correct science.”
+
+---
+
+### Final Perspective
+
+**Good materials modeling requires:**
+- Scientific rigor
+- Method selection
+- Validation
+- Critical thinking
+
+**Bottom line:**  
+Modeling is a decision-making tool, not magic.

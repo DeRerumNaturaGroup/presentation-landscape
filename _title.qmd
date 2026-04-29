@@ -1,0 +1,35 @@
+
+<!-- ![](_figs/treelogo.png){width="1%"} -->
+<br>
+<br>
+
+::: columns 
+::: {.column .right width="65%"}
+[**The Materials Modeling Landscape**]{style="color:teal"}
+
+[*(An introduction for Graduate Students)*]{style="color:gray"}
+
+:::
+
+::: {.column .left width="35%"}
+::::{.ddm style="margin:0"}
+:::{.dd-head onclick="toggleBox(this)" style="color:black; background:white"}
+Sheharyar Pervez
+
+[DRN Group, GIK Institute]{style="color:gray"}
+
+:::
+:::{.dd-box style="background:LightCoral; color:black"}
+[(She.HER.yar)]{style="font-size:0.7em"}
+
+
+[She = **She**ll; har = **Her**;]{style="font-size:0.7em"} \
+[yar = **yar**n]{style="font-size:0.7em"} \
+[But feel free to say it anyway you like.]{style="font-size:0.7em"}
+:::
+::::
+
+
+:::
+:::
+

@@ -1,0 +1,200 @@
+
+## What is Materials Modeling?
+
+- Use of **physics-based or data-driven methods** to understand and predict material behavior  
+- Bridges **theory ↔ experiment ↔ application**
+- Enables:
+  - Property prediction before synthesis
+  - Design of new materials
+  - Understanding mechanisms at multiple scales
+
+**Core idea:** Replace expensive experiments with **predictive computation**
+
+---
+
+## Why It Matters
+
+- Reduces cost and time in materials discovery
+- Enables exploration of **impossible-to-test conditions**
+- Drives innovation in:
+  - Energy materials
+  - Semiconductors
+  - Biomaterials
+  - Nanotechnology
+
+---
+
+## The Multiscale Nature
+
+- Materials behavior spans:
+  - **Electrons → atoms → microstructure → devices**
+- No single method covers everything
+
+**Key challenge:** Linking scales consistently
+
+---
+
+## Major Branches of Materials Modeling
+
+### Quantum Mechanical Methods
+
+- Based on **first principles (ab initio)**
+- Examples:
+  - Density Functional Theory (DFT)
+- Used for:
+  - Electronic structure
+  - Band structure
+  - Defects
+
+---
+
+## Major Branches (continued)
+
+### Atomistic Simulations
+
+- Treat atoms explicitly
+- Examples:
+  - Molecular Dynamics (MD)
+  - Monte Carlo
+
+- Used for:
+  - Diffusion
+  - Thermal properties
+  - Structural evolution
+
+---
+
+## Major Branches (continued)
+
+### Mesoscale Modeling
+
+- Coarse-grained descriptions
+- Examples:
+  - Phase-field models
+  - Kinetic Monte Carlo
+
+- Used for:
+  - Microstructure evolution
+  - Grain growth
+  - Defect dynamics
+
+---
+
+## Major Branches (continued)
+
+### Continuum Modeling
+
+- Treat material as continuous medium
+- Examples:
+  - Finite Element Method (FEM)
+
+- Used for:
+  - Mechanical behavior
+  - Device-scale simulations
+
+---
+
+## Emerging Direction
+
+### Data-Driven Modeling
+
+- Machine Learning + Materials Science
+- Examples:
+  - Property prediction models
+  - Generative materials design
+
+- Key shift:
+  - From **physics-only → physics + data**
+
+---
+
+## What Are Coding Platforms?
+
+- Software tools used to perform simulations
+
+### Quantum Level
+- VASP, Quantum ESPRESSO, ABINIT
+
+### Atomistic
+- LAMMPS, GROMACS
+
+### Continuum / FEM
+- COMSOL, ANSYS
+
+---
+
+## Open-Source Ecosystem
+
+- Python-based workflows are growing:
+  - ASE (Atomic Simulation Environment)
+  - pymatgen
+  - Materials Project APIs
+
+**Trend:** Automation + high-throughput simulations
+
+---
+
+## What Skills Do You Need?
+
+### Core Foundations
+
+- Physics:
+  - Quantum mechanics
+  - Thermodynamics
+  - Solid state physics
+
+- Mathematics:
+  - Linear algebra
+  - Differential equations
+
+---
+
+## Skills (continued)
+
+### Computational Skills
+
+- Programming:
+  - Python (essential)
+  - C/C++ (useful)
+
+- Numerical methods:
+  - Optimization
+  - Simulation techniques
+
+- Working with:
+  - HPC clusters
+  - Linux environments
+
+---
+
+## Skills (continued)
+
+### Data Skills (Increasingly Important)
+
+- Machine learning basics
+- Data handling and visualization
+- Scientific workflows
+
+---
+
+## What Makes a Strong Researcher?
+
+- Ability to:
+  - Choose the **right method for the right scale**
+  - Connect models to real physical insight
+  - Not blindly trust simulations
+
+**Reality check:**  
+Bad modeling > no modeling
+
+---
+
+## Takeaway
+
+- Materials modeling is:
+  - Multiscale
+  - Interdisciplinary
+  - Increasingly data-driven
+
+- The future belongs to people who can:
+  - Combine **physics + computation + data**

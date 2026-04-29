@@ -1,0 +1,56 @@
+---
+title: "."
+format:
+    revealjs:
+        title-slide-attributes:
+            data-background-image: figs/treelogo.png
+            data-background-size: 50px
+        width: 1600
+        height: 900
+        margin: 0.1
+        theme: [default, css/style.scss]
+        css: [css/style.css, css/buttons.css, css/tabs.css, css/callouts.css, css/nav.css, css/revealhacks.css]
+        subtitle: ""
+        author: ""
+        toc: FALSE
+        incremental: FALSE
+        slide-number: true
+        # auto-animate-easing: ease-in-out
+        auto-animate-unmatched: false
+        auto-animate-duration: 1.5   
+        transition: convex
+        background-transition: fade
+        logo: figs/treelogo.png
+        ligthbox: auto
+        engine: jupyter            
+
+include-in-header:
+    file: scripts/scripts.js
+
+editor: source
+---
+
+
+## {.center}
+
+{{< include _title.qmd >}}
+
+## Common Myths & Misconceptions {.scrollable}
+
+{{< include _myths.qmd >}}
+
+## The Landscape {.scrollable}
+
+{{< include _intro.qmd >}}
+
+## About me {.scrollable}
+
+{{< include _aboutme.qmd >}}
+
+
+
+
+<!-- The end -->
+## {.center}
+{{< include _theend.qmd >}}
+
