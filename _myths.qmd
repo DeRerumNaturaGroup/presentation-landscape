@@ -1,7 +1,6 @@
 ## Common Myths & Misconceptions in Materials Modeling
 
 
-
 ::::{.ddm}
 :::{.dd-head onclick="toggleBox(this)"}
 
@@ -64,13 +63,23 @@ Myth 5: Machine learning will replace physics
 :::
 ::::
 
+<!-- style="background-color: #d9534f;" -->
 
-### Common Pitfall
 
+::::{.ddm}
+:::{.dd-head onclick="toggleBox(this)" style="background-color: #d9534f;"}
+Common Pitfall
+:::
+:::{.dd-box}
 > Pretty plots do not guarantee correct science.
+:::
+::::
 
-### Final Perspective
-
+::::{.ddm}
+:::{.dd-head onclick="toggleBox(this)" style="background-color: #1c445e;"}
+Final Perspective
+:::
+:::{.dd-box}
 **Good materials modeling requires:**
 
 - Scientific rigor
@@ -80,3 +89,8 @@ Myth 5: Machine learning will replace physics
 
 **Bottom line:**  
 Modeling is a decision-making tool, not magic.
+:::
+::::
+
+
+

@@ -291,7 +291,7 @@ The five methods of computational materials science, arranged left-to-right by s
 | **Monte Carlo** | Stochastic sampling | Atoms to supercells | Varies | Phase diagrams, QMC impurity solver |
 | **Cheminformatics / ML** | Data-driven | Millions of structures | O(N) | High-throughput screening |
 
-: Key properties of each method {#tbl-methods}
+: Key properties of each method {#tbl-methods tbl-colwidths="[15,28,20,7,30]" style="font-size: 0.67em; margin: 1rem auto;"}
 
 ## How the methods connect
 
