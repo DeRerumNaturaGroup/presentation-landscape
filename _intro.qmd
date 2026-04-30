@@ -32,6 +32,17 @@
 
 **Key challenge:** Linking scales consistently
 
+## Where you start depends on your question and background.
+What you need to know depends on what you want to do. You can start with a simple model and build up as needed. The important thing is to understand the assumptions and limitations of your chosen method.
+
+## How you can contribute
+- Materials modeling is a **team sport**. It requires collaboration between theorists, experimentalists, and data scientists.
+- You can contribute by:
+  - Developing new methods
+  - Applying existing methods to new problems
+  - Validating models with experiments
+  - Sharing data and code openly
+
 ---
 
 ## Major Branches of Materials Modeling
@@ -107,94 +118,3 @@
   - From **physics-only → physics + data**
 
 ---
-
-## What Are Coding Platforms?
-
-- Software tools used to perform simulations
-
-### Quantum Level
-- VASP, Quantum ESPRESSO, ABINIT
-
-### Atomistic
-- LAMMPS, GROMACS
-
-### Continuum / FEM
-- COMSOL, ANSYS
-
----
-
-## Open-Source Ecosystem
-
-- Python-based workflows are growing:
-  - ASE (Atomic Simulation Environment)
-  - pymatgen
-  - Materials Project APIs
-
-**Trend:** Automation + high-throughput simulations
-
----
-
-## What Skills Do You Need?
-
-### Core Foundations
-
-- Physics:
-  - Quantum mechanics
-  - Thermodynamics
-  - Solid state physics
-
-- Mathematics:
-  - Linear algebra
-  - Differential equations
-
----
-
-## Skills (continued)
-
-### Computational Skills
-
-- Programming:
-  - Python (essential)
-  - C/C++ (useful)
-
-- Numerical methods:
-  - Optimization
-  - Simulation techniques
-
-- Working with:
-  - HPC clusters
-  - Linux environments
-
----
-
-## Skills (continued)
-
-### Data Skills (Increasingly Important)
-
-- Machine learning basics
-- Data handling and visualization
-- Scientific workflows
-
----
-
-## What Makes a Strong Researcher?
-
-- Ability to:
-  - Choose the **right method for the right scale**
-  - Connect models to real physical insight
-  - Not blindly trust simulations
-
-**Reality check:**  
-Bad modeling > no modeling
-
----
-
-## Takeaway
-
-- Materials modeling is:
-  - Multiscale
-  - Interdisciplinary
-  - Increasingly data-driven
-
-- The future belongs to people who can:
-  - Combine **physics + computation + data**

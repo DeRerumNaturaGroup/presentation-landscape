@@ -22,7 +22,8 @@ format:
         background-transition: fade
         logo: figs/treelogo.png
         ligthbox: auto
-        engine: jupyter            
+        engine: jupyter 
+        scrollable: true           
 
 include-in-header:
     file: scripts/scripts.js
@@ -35,13 +36,24 @@ editor: source
 
 {{< include _title.qmd >}}
 
+
+
+
 ## Common Myths & Misconceptions {.scrollable}
 
 {{< include _myths.qmd >}}
 
+## {.scrollable}
+
+{{< include _methods.qmd >}}
+
 ## The Landscape {.scrollable}
 
 {{< include _intro.qmd >}}
+
+## Skill Set {.scrollable}
+
+{{< include _skills.qmd >}}
 
 ## About me {.scrollable}
 

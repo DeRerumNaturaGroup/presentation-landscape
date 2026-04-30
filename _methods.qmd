@@ -1,0 +1,306 @@
+
+```{=html}
+<style>
+.figure-caption {
+  font-size: 0.875rem;
+  color: #555;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+</style>
+```
+
+::: {#fig-materials-modeling}
+
+```{=html}
+<svg width="100%" 
+    viewBox="0 0 680 880"
+     role="img"
+     aria-labelledby="svg-title svg-desc"
+     xmlns="http://www.w3.org/2000/svg"
+     style="margin:0 auto;">
+
+  <title id="svg-title">Materials Modeling Landscape</title>
+  <desc id="svg-desc">
+    Poster-style infographic showing GW methods, DFT, DMFT, Monte Carlo, and
+    Cheminformatics arranged by system size and accuracy, with dependency arrows.
+  </desc>
+
+  <defs>
+    <pattern id="dots" width="18" height="18" patternUnits="userSpaceOnUse">
+      <circle cx="9" cy="9" r="1.2" fill="#7F77DD" opacity="0.18"/>
+    </pattern>
+    <pattern id="hatch" width="10" height="10" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="10" x2="10" y2="0" stroke="#1D9E75" stroke-width="0.6" opacity="0.22"/>
+    </pattern>
+    <clipPath id="clip-card1"><rect x="48" y="148" width="274" height="168" rx="14"/></clipPath>
+    <clipPath id="clip-card2"><rect x="358" y="148" width="274" height="168" rx="14"/></clipPath>
+    <clipPath id="clip-card3"><rect x="48"  y="346" width="274" height="168" rx="14"/></clipPath>
+    <clipPath id="clip-card4"><rect x="358" y="346" width="274" height="168" rx="14"/></clipPath>
+    <clipPath id="clip-card5"><rect x="48"  y="544" width="584" height="168" rx="14"/></clipPath>
+  </defs>
+
+  <!-- ── HEADER ── -->
+  <rect x="0" y="0" width="680" height="128" fill="#26215C"/>
+  <rect x="0" y="118" width="680" height="10" fill="#534AB7"/>
+
+  <!-- decorative hex grid -->
+  <g opacity="0.12" fill="none" stroke="#AFA9EC" stroke-width="0.7">
+    <polygon points="580,18 600,30 600,54 580,66 560,54 560,30"/>
+    <polygon points="616,18 636,30 636,54 616,66 596,54 596,30"/>
+    <polygon points="652,18 672,30 672,54 652,66 632,54 632,30"/>
+    <polygon points="598,54 618,66 618,90 598,102 578,90 578,66"/>
+    <polygon points="634,54 654,66 654,90 634,102 614,90 614,66"/>
+  </g>
+
+  <text x="48" y="52" font-size="26" font-weight="500" fill="#EEEDFE" font-family="Georgia, serif">Materials modeling</text>
+  <text x="48" y="78" font-size="14" fill="#AFA9EC" font-family="Georgia, serif">Five methods — how they differ, and how they connect</text>
+
+  <!-- scale bar -->
+  <rect x="48" y="96" width="420" height="6" rx="3" fill="#534AB7"/>
+  <rect x="48" y="96" width="84"  height="6" rx="3" fill="#7F77DD"/>
+  <text x="48"  y="114" font-size="11" fill="#7F77DD"  font-family="Georgia, serif">~10 atoms</text>
+  <text x="244" y="114" font-size="11" fill="#534AB7"  font-family="Georgia, serif">~1 000 atoms</text>
+  <text x="470" y="114" font-size="11" fill="#888780"  font-family="Georgia, serif">millions</text>
+
+  <!-- ── ROW 1 : GW ── -->
+  <rect x="48" y="148" width="274" height="168" rx="14" fill="#EEEDFE"/>
+  <rect x="48" y="148" width="274" height="168" rx="14" fill="url(#dots)"/>
+  <g clip-path="url(#clip-card1)" opacity="0.15">
+    <circle cx="270" cy="200" r="70" fill="none" stroke="#534AB7" stroke-width="1.5"/>
+    <circle cx="270" cy="200" r="44" fill="none" stroke="#534AB7" stroke-width="1"/>
+    <circle cx="270" cy="200" r="18" fill="#534AB7"/>
+    <ellipse cx="270" cy="200" rx="70" ry="24" fill="none" stroke="#534AB7" stroke-width="1" transform="rotate(40,270,200)"/>
+    <ellipse cx="270" cy="200" rx="70" ry="24" fill="none" stroke="#534AB7" stroke-width="1" transform="rotate(-40,270,200)"/>
+  </g>
+  <rect x="48" y="148" width="6" height="168" rx="3" fill="#534AB7"/>
+  <text x="68" y="183" font-size="22" font-weight="500" fill="#26215C" font-family="Georgia, serif">GW methods</text>
+  <text x="68" y="204" font-size="12" fill="#534AB7" font-family="Georgia, serif">Many-body perturbation theory</text>
+  <line x1="68" y1="214" x2="298" y2="214" stroke="#AFA9EC" stroke-width="0.5"/>
+  <text x="68" y="234" font-size="12" fill="#3C3489" font-family="Georgia, serif">Corrects DFT band gaps via</text>
+  <text x="68" y="250" font-size="12" fill="#3C3489" font-family="Georgia, serif">quasiparticle self-energy</text>
+  <text x="68" y="270" font-size="12" fill="#534AB7" font-family="Georgia, serif">Scale:</text>
+  <text x="106" y="270" font-size="12" fill="#3C3489" font-family="Georgia, serif">~10–50 atoms</text>
+  <text x="68"  y="288" font-size="12" fill="#534AB7" font-family="Georgia, serif">Cost:</text>
+  <rect x="100" y="278" width="18" height="8" rx="2" fill="#534AB7"/>
+  <rect x="122" y="278" width="18" height="8" rx="2" fill="#534AB7"/>
+  <rect x="144" y="278" width="18" height="8" rx="2" fill="#534AB7"/>
+  <rect x="166" y="278" width="18" height="8" rx="2" fill="#AFA9EC"/>
+  <text x="190" y="288" font-size="11" fill="#888780" font-family="Georgia, serif">O(N⁴)</text>
+  <rect x="225" y="288" width="92" height="20" rx="10" fill="#534AB7"/>
+  <text x="272" y="302" font-size="11" font-weight="500" fill="#EEEDFE" text-anchor="middle" font-family="Georgia, serif">highest accuracy</text>
+
+  <!-- ── ROW 1 : DFT ── -->
+  <rect x="358" y="148" width="274" height="168" rx="14" fill="#E6F1FB"/>
+  <g clip-path="url(#clip-card2)" opacity="0.13">
+    <path d="M360,175 Q390,158 420,175 Q450,192 480,175 Q510,158 540,175 Q570,192 600,175 Q630,158 660,175" fill="none" stroke="#185FA5" stroke-width="1.2"/>
+    <path d="M360,195 Q390,178 420,195 Q450,212 480,195 Q510,178 540,195 Q570,212 600,195 Q630,178 660,195" fill="none" stroke="#185FA5" stroke-width="1.2"/>
+    <path d="M360,215 Q390,198 420,215 Q450,232 480,215 Q510,198 540,215 Q570,232 600,215 Q630,198 660,215" fill="none" stroke="#185FA5" stroke-width="1.2"/>
+    <path d="M360,240 Q390,223 420,240 Q450,257 480,240 Q510,223 540,240 Q570,257 600,240 Q630,223 660,240" fill="none" stroke="#185FA5" stroke-width="1.2"/>
+    <path d="M360,260 Q390,243 420,260 Q450,277 480,260 Q510,243 540,260 Q570,277 600,260 Q630,243 660,260" fill="none" stroke="#185FA5" stroke-width="1.2"/>
+    <path d="M360,285 Q390,268 420,285 Q450,302 480,285 Q510,268 540,285 Q570,302 600,285 Q630,268 660,285" fill="none" stroke="#185FA5" stroke-width="1.2"/>
+    <path d="M360,305 Q390,288 420,305 Q450,322 480,305 Q510,288 540,305 Q570,322 600,305 Q630,288 660,305" fill="none" stroke="#185FA5" stroke-width="1.2"/>
+  </g>
+  <rect x="358" y="148" width="6" height="168" rx="3" fill="#185FA5"/>
+  <text x="378" y="183" font-size="22" font-weight="500" fill="#042C53" font-family="Georgia, serif">DFT</text>
+  <text x="378" y="204" font-size="12" fill="#185FA5" font-family="Georgia, serif">Density functional theory</text>
+  <line x1="378" y1="214" x2="612" y2="214" stroke="#85B7EB" stroke-width="0.5"/>
+  <text x="378" y="234" font-size="12" fill="#0C447C" font-family="Georgia, serif">Ground-state electron density</text>
+  <text x="378" y="250" font-size="12" fill="#0C447C" font-family="Georgia, serif">via exchange-correlation functional</text>
+  <text x="378" y="270" font-size="12" fill="#185FA5" font-family="Georgia, serif">Scale:</text>
+  <text x="416" y="270" font-size="12" fill="#0C447C" font-family="Georgia, serif">100–1 000 atoms</text>
+  <text x="378" y="288" font-size="12" fill="#185FA5" font-family="Georgia, serif">Cost:</text>
+  <rect x="410" y="278" width="18" height="8" rx="2" fill="#185FA5"/>
+  <rect x="432" y="278" width="18" height="8" rx="2" fill="#185FA5"/>
+  <rect x="454" y="278" width="18" height="8" rx="2" fill="#B5D4F4"/>
+  <rect x="476" y="278" width="18" height="8" rx="2" fill="#B5D4F4"/>
+  <text x="500" y="288" font-size="11" fill="#888780" font-family="Georgia, serif">O(N³)</text>
+  <rect x="538" y="288" width="66" height="20" rx="10" fill="#185FA5"/>
+  <text x="571" y="302" font-size="11" font-weight="500" fill="#E6F1FB" text-anchor="middle" font-family="Georgia, serif">workhorse</text>
+
+  <!-- GW → DFT arrow -->
+  <path d="M322 232 L358 232" fill="none" stroke="#7F77DD" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <polygon points="354,228 362,232 354,236" fill="#7F77DD"/>
+  <text x="337" y="226" font-size="10" fill="#888780" text-anchor="middle" font-family="Georgia, serif">corrects</text>
+
+  <!-- ── ROW 2 : DMFT ── -->
+  <rect x="48" y="346" width="274" height="168" rx="14" fill="#FAECE7"/>
+  <g clip-path="url(#clip-card3)" opacity="0.12">
+    <circle cx="274" cy="380" r="90" fill="none" stroke="#993C1D" stroke-width="1.2"/>
+    <circle cx="274" cy="380" r="62" fill="none" stroke="#993C1D" stroke-width="1"/>
+    <circle cx="274" cy="380" r="34" fill="none" stroke="#993C1D" stroke-width="0.8"/>
+    <circle cx="274" cy="380" r="14" fill="#D85A30"/>
+    <line x1="184" y1="380" x2="364" y2="380" stroke="#993C1D" stroke-width="0.8"/>
+    <line x1="274" y1="290" x2="274" y2="470" stroke="#993C1D" stroke-width="0.8"/>
+  </g>
+  <rect x="48" y="346" width="6" height="168" rx="3" fill="#D85A30"/>
+  <text x="68" y="381" font-size="22" font-weight="500" fill="#4A1B0C" font-family="Georgia, serif">DMFT</text>
+  <text x="68" y="402" font-size="12" fill="#993C1D" font-family="Georgia, serif">Dynamical mean-field theory</text>
+  <line x1="68" y1="412" x2="298" y2="412" stroke="#F5C4B3" stroke-width="0.5"/>
+  <text x="68" y="432" font-size="12" fill="#712B13" font-family="Georgia, serif">Maps lattice → impurity problem;</text>
+  <text x="68" y="448" font-size="12" fill="#712B13" font-family="Georgia, serif">handles strong correlations</text>
+  <text x="68" y="468" font-size="12" fill="#993C1D" font-family="Georgia, serif">Scale:</text>
+  <text x="106" y="468" font-size="12" fill="#712B13" font-family="Georgia, serif">unit cell (d/f orbitals)</text>
+  <text x="68"  y="486" font-size="12" fill="#993C1D" font-family="Georgia, serif">Cost:</text>
+  <rect x="100" y="476" width="18" height="8" rx="2" fill="#D85A30"/>
+  <rect x="122" y="476" width="18" height="8" rx="2" fill="#D85A30"/>
+  <rect x="144" y="476" width="18" height="8" rx="2" fill="#F5C4B3"/>
+  <rect x="166" y="476" width="18" height="8" rx="2" fill="#F5C4B3"/>
+  <rect x="240" y="486" width="74" height="20" rx="10" fill="#D85A30"/>
+  <text x="277" y="500" font-size="11" font-weight="500" fill="#FAECE7" text-anchor="middle" font-family="Georgia, serif">correlated solids</text>
+
+  <!-- ── ROW 2 : Monte Carlo ── -->
+  <rect x="358" y="346" width="274" height="168" rx="14" fill="#E1F5EE"/>
+  <rect x="358" y="346" width="274" height="168" rx="14" fill="url(#hatch)"/>
+  <g clip-path="url(#clip-card4)" opacity="0.14">
+    <circle cx="590" cy="415" r="6"  fill="#0F6E56"/>
+    <circle cx="560" cy="390" r="4"  fill="#0F6E56"/>
+    <circle cx="608" cy="448" r="5"  fill="#0F6E56"/>
+    <circle cx="572" cy="460" r="3"  fill="#0F6E56"/>
+    <circle cx="540" cy="430" r="7"  fill="#1D9E75"/>
+    <circle cx="620" cy="390" r="3"  fill="#1D9E75"/>
+    <circle cx="600" cy="365" r="5"  fill="#1D9E75"/>
+    <circle cx="558" cy="355" r="4"  fill="#0F6E56"/>
+    <circle cx="630" cy="430" r="6"  fill="#0F6E56"/>
+    <circle cx="580" cy="480" r="4"  fill="#1D9E75"/>
+    <circle cx="620" cy="480" r="3"  fill="#0F6E56"/>
+    <circle cx="548" cy="475" r="5"  fill="#1D9E75"/>
+  </g>
+  <rect x="358" y="346" width="6" height="168" rx="3" fill="#1D9E75"/>
+  <text x="378" y="381" font-size="22" font-weight="500" fill="#04342C" font-family="Georgia, serif">Monte Carlo</text>
+  <text x="378" y="402" font-size="12" fill="#0F6E56" font-family="Georgia, serif">Stochastic sampling methods</text>
+  <line x1="378" y1="412" x2="612" y2="412" stroke="#9FE1CB" stroke-width="0.5"/>
+  <text x="378" y="432" font-size="12" fill="#085041" font-family="Georgia, serif">QMC, kinetic MC, grand-canonical</text>
+  <text x="378" y="448" font-size="12" fill="#085041" font-family="Georgia, serif">MC — spans electrons to phases</text>
+  <text x="378" y="468" font-size="12" fill="#0F6E56" font-family="Georgia, serif">Scale:</text>
+  <text x="416" y="468" font-size="12" fill="#085041" font-family="Georgia, serif">atoms to supercells</text>
+  <text x="378" y="486" font-size="12" fill="#0F6E56" font-family="Georgia, serif">Cost:</text>
+  <rect x="410" y="476" width="18" height="8" rx="2" fill="#1D9E75"/>
+  <rect x="432" y="476" width="18" height="8" rx="2" fill="#1D9E75"/>
+  <rect x="454" y="476" width="18" height="8" rx="2" fill="#9FE1CB"/>
+  <rect x="476" y="476" width="18" height="8" rx="2" fill="#9FE1CB"/>
+  <rect x="532" y="486" width="76" height="20" rx="10" fill="#1D9E75"/>
+  <text x="570" y="500" font-size="11" font-weight="500" fill="#E1F5EE" text-anchor="middle" font-family="Georgia, serif">stochastic solver</text>
+
+  <!-- DMFT → MC arrow -->
+  <path d="M322 430 L358 430" fill="none" stroke="#D85A30" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <polygon points="354,426 362,430 354,434" fill="#D85A30"/>
+  <text x="337" y="424" font-size="10" fill="#888780" text-anchor="middle" font-family="Georgia, serif">impurity</text>
+  <text x="337" y="436" font-size="10" fill="#888780" text-anchor="middle" font-family="Georgia, serif">solver</text>
+
+  <!-- DFT → DMFT vertical -->
+  <path d="M200 316 L200 346" fill="none" stroke="#185FA5" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <polygon points="196,342 200,350 204,342" fill="#185FA5"/>
+  <text x="210" y="333" font-size="10" fill="#888780" font-family="Georgia, serif">Wannier H</text>
+
+  <!-- DFT → MC vertical -->
+  <path d="M500 316 L500 346" fill="none" stroke="#185FA5" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <polygon points="496,342 500,350 504,342" fill="#185FA5"/>
+  <text x="510" y="333" font-size="10" fill="#888780" font-family="Georgia, serif">energy surface</text>
+
+  <!-- ── ROW 3 : CHEMINFORMATICS ── -->
+  <rect x="48" y="544" width="584" height="168" rx="14" fill="#FAEEDA"/>
+  <g clip-path="url(#clip-card5)" opacity="0.1">
+    <line x1="48"  y1="560" x2="632" y2="560" stroke="#BA7517" stroke-width="1"/>
+    <line x1="48"  y1="580" x2="632" y2="580" stroke="#BA7517" stroke-width="0.5"/>
+    <line x1="48"  y1="600" x2="632" y2="600" stroke="#BA7517" stroke-width="0.5"/>
+    <line x1="48"  y1="620" x2="632" y2="620" stroke="#BA7517" stroke-width="1"/>
+    <line x1="48"  y1="640" x2="632" y2="640" stroke="#BA7517" stroke-width="0.5"/>
+    <line x1="48"  y1="660" x2="632" y2="660" stroke="#BA7517" stroke-width="0.5"/>
+    <line x1="48"  y1="680" x2="632" y2="680" stroke="#BA7517" stroke-width="1"/>
+    <line x1="48"  y1="700" x2="632" y2="700" stroke="#BA7517" stroke-width="0.5"/>
+    <line x1="120" y1="544" x2="120" y2="712" stroke="#BA7517" stroke-width="0.5"/>
+    <line x1="200" y1="544" x2="200" y2="712" stroke="#BA7517" stroke-width="1"/>
+    <line x1="280" y1="544" x2="280" y2="712" stroke="#BA7517" stroke-width="0.5"/>
+    <line x1="360" y1="544" x2="360" y2="712" stroke="#BA7517" stroke-width="1"/>
+    <line x1="440" y1="544" x2="440" y2="712" stroke="#BA7517" stroke-width="0.5"/>
+    <line x1="520" y1="544" x2="520" y2="712" stroke="#BA7517" stroke-width="0.5"/>
+    <line x1="600" y1="544" x2="600" y2="712" stroke="#BA7517" stroke-width="1"/>
+  </g>
+  <rect x="48" y="544" width="6" height="168" rx="3" fill="#BA7517"/>
+  <text x="68" y="581" font-size="22" font-weight="500" fill="#412402" font-family="Georgia, serif">Cheminformatics &amp; ML potentials</text>
+  <text x="68" y="602" font-size="12" fill="#854F0B" font-family="Georgia, serif">Data-driven materials discovery</text>
+  <line x1="68" y1="612" x2="608" y2="612" stroke="#FAC775" stroke-width="0.5"/>
+  <rect x="68"  y="624" width="130" height="28" rx="6" fill="#EF9F27" opacity="0.25"/>
+  <text x="133" y="642" font-size="12" fill="#633806" text-anchor="middle" font-family="Georgia, serif">SMILES / fingerprints</text>
+  <rect x="210" y="624" width="130" height="28" rx="6" fill="#EF9F27" opacity="0.25"/>
+  <text x="275" y="642" font-size="12" fill="#633806" text-anchor="middle" font-family="Georgia, serif">Graph neural nets</text>
+  <rect x="352" y="624" width="130" height="28" rx="6" fill="#EF9F27" opacity="0.25"/>
+  <text x="417" y="642" font-size="12" fill="#633806" text-anchor="middle" font-family="Georgia, serif">ML force fields</text>
+  <rect x="494" y="624" width="114" height="28" rx="6" fill="#EF9F27" opacity="0.25"/>
+  <text x="551" y="642" font-size="12" fill="#633806" text-anchor="middle" font-family="Georgia, serif">High-throughput</text>
+  <text x="68" y="678" font-size="12" fill="#633806" font-family="Georgia, serif">Trained on DFT/MC data — enables screening of millions of candidates at near-zero marginal cost</text>
+  <text x="68" y="696" font-size="12" fill="#854F0B" font-family="Georgia, serif">Scale:</text>
+  <text x="106" y="696" font-size="12" fill="#633806" font-family="Georgia, serif">millions of structures        Cost:</text>
+  <rect x="352" y="686" width="18" height="8" rx="2" fill="#BA7517"/>
+  <rect x="374" y="686" width="18" height="8" rx="2" fill="#FAC775"/>
+  <rect x="396" y="686" width="18" height="8" rx="2" fill="#FAC775"/>
+  <rect x="418" y="686" width="18" height="8" rx="2" fill="#FAC775"/>
+  <text x="444" y="696" font-size="11" fill="#888780" font-family="Georgia, serif">near-zero per candidate</text>
+  <rect x="530" y="688" width="74" height="20" rx="10" fill="#BA7517"/>
+  <text x="567" y="702" font-size="11" font-weight="500" fill="#FAEEDA" text-anchor="middle" font-family="Georgia, serif">largest scale</text>
+
+  <!-- Cheminformatics arrows -->
+  <path d="M200 514 L200 544" fill="none" stroke="#BA7517" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <polygon points="196,540 200,548 204,540" fill="#BA7517"/>
+  <text x="150" y="531" font-size="10" fill="#888780" font-family="Georgia, serif">DFT labels</text>
+
+  <path d="M500 514 L500 544" fill="none" stroke="#BA7517" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <polygon points="496,540 500,548 504,540" fill="#BA7517"/>
+  <text x="510" y="531" font-size="10" fill="#888780" font-family="Georgia, serif">MC trajectories</text>
+
+  <!-- ── LEGEND ── -->
+  <rect x="48" y="738" width="584" height="2" fill="#d3d1c7" rx="1"/>
+  <text x="48" y="762" font-size="13" font-weight="500" fill="#444441" font-family="Georgia, serif">Method dependencies</text>
+
+  <line x1="48"  y1="784" x2="86"  y2="784" stroke="#7F77DD" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <polygon points="82,780 90,784 82,788" fill="#7F77DD"/>
+  <text x="96"  y="788" font-size="12" fill="#5F5E5A" font-family="Georgia, serif">GW corrects DFT band gaps</text>
+
+  <line x1="270" y1="784" x2="308" y2="784" stroke="#185FA5" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <polygon points="304,780 312,784 304,788" fill="#185FA5"/>
+  <text x="318" y="788" font-size="12" fill="#5F5E5A" font-family="Georgia, serif">DFT provides Hamiltonian / surfaces</text>
+
+  <line x1="48"  y1="808" x2="86"  y2="808" stroke="#D85A30" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <polygon points="82,804 90,808 82,812" fill="#D85A30"/>
+  <text x="96"  y="812" font-size="12" fill="#5F5E5A" font-family="Georgia, serif">DMFT uses QMC as impurity solver</text>
+
+  <line x1="270" y1="808" x2="308" y2="808" stroke="#BA7517" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <polygon points="304,804 312,808 304,812" fill="#BA7517"/>
+  <text x="318" y="812" font-size="12" fill="#5F5E5A" font-family="Georgia, serif">DFT/MC data trains ML models</text>
+
+  <!-- ── FOOTER ── -->
+  <rect x="0" y="840" width="680" height="36" fill="#26215C"/>
+  <text x="340" y="863" font-size="11" fill="#7F77DD" text-anchor="middle" font-family="Georgia, serif">
+    accuracy: GW &gt; DMFT ≈ QMC &gt; DFT &gt; ML     ·     cost per evaluation: inverse order
+  </text>
+
+</svg>
+```
+
+The five methods of computational materials science, arranged left-to-right by system size and top-to-bottom by accuracy. Dashed arrows indicate real computational dependencies between methods.
+:::
+
+## Method summary
+
+| Method | Theoretical basis | Typical scale | Scaling | Key use case |
+|---|---|---|---|---|
+| **GW** | Many-body perturbation theory | ~10–50 atoms | O(N⁴) | Accurate band gaps, quasiparticles |
+| **DFT** | Density functional theory | 100–1 000 atoms | O(N³) | Ground-state structure & energetics |
+| **DMFT** | Dynamical mean-field theory | Unit cell | O(N³)+ | Mott insulators, heavy fermions |
+| **Monte Carlo** | Stochastic sampling | Atoms to supercells | Varies | Phase diagrams, QMC impurity solver |
+| **Cheminformatics / ML** | Data-driven | Millions of structures | O(N) | High-throughput screening |
+
+: Key properties of each method {#tbl-methods}
+
+## How the methods connect
+
+DFT is the central hub of the landscape. 
+
+GW applies perturbative corrections on top of DFT orbitals to recover accurate quasiparticle band gaps — expensive but exact for weakly correlated systems. 
+
+For strongly correlated materials (Mott insulators, heavy-fermion compounds), DFT generates a Wannier-projected tight-binding Hamiltonian that feeds into DMFT, whose Anderson impurity model is solved numerically by quantum Monte Carlo. 
+
+Classical Monte Carlo and molecular dynamics extend the reach of DFT-computed energy surfaces to longer times and larger supercells. 
+
+Finally, the large databases of DFT-labeled structures and MC trajectories (e.g., the Materials Project) serve as training data for machine-learning interatomic potentials and cheminformatics models, enabling screening at scales that are completely intractable for first-principles methods.

@@ -4,19 +4,22 @@
 <br>
 
 ::: columns 
-::: {.column .right width="65%"}
+::: {.column .right width="60%"}
 [**The Materials Modeling Landscape**]{style="color:teal"}
 
 [*(An introduction for Graduate Students)*]{style="color:gray"}
 
 :::
-
+:::{.column .right width="5%"}
+::: {data-id="box1" style="background: #2780e3; width: 15px; height: 165px; border-radius: 0px; align: center;"}
+:::
+:::
 ::: {.column .left width="35%"}
 ::::{.ddm style="margin:0"}
 :::{.dd-head onclick="toggleBox(this)" style="color:black; background:white"}
 Sheharyar Pervez
 
-[DRN Group, GIK Institute]{style="color:gray"}
+[DRN Group, GIK Institute]{style="color:gray; font-size:0.9em"}
 
 :::
 :::{.dd-box style="background:LightCoral; color:black"}

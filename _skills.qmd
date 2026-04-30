@@ -1,0 +1,107 @@
+
+
+
+## What Skills Do You Need?
+
+::::{.ddm}
+:::{.dd-head onclick="toggleBox(this)"}
+
+Core Foundations
+:::
+:::{.dd-box}
+
+- Physics:
+  - Quantum mechanics
+  - Thermodynamics
+  - Solid state physics
+
+- Mathematics:
+  - Linear algebra
+  - Differential equations
+
+:::
+::::
+
+<!--  -->
+
+::::{.ddm}
+:::{.dd-head onclick="toggleBox(this)"}
+
+Computational Skills
+:::
+:::{.dd-box}
+
+- Programming:
+  - Python (essential)
+  - C/C++ (useful)
+
+- Numerical methods:
+  - Optimization
+  - Simulation techniques
+
+- Working with:
+  - HPC clusters
+  - Linux environments
+
+:::
+::::
+
+<!--  -->
+::::{.ddm}
+:::{.dd-head onclick="toggleBox(this)"}
+
+Data Skills (Increasingly Important)
+:::
+:::{.dd-box}
+
+- Machine learning basics
+- Data handling and visualization
+- Scientific workflows
+
+:::
+::::
+
+
+<!--  -->
+::::{.ddm}
+:::{.dd-head onclick="toggleBox(this)"}
+
+What Makes a Strong Researcher?
+:::
+:::{.dd-box}
+
+- Ability to:
+  - Choose the **right method for the right scale**
+  - Connect models to real physical insight
+  - Not blindly trust simulations
+
+**Reality check:**  
+Bad modeling > no modeling
+
+:::
+::::
+
+
+<!--  -->
+::::{.ddm}
+:::{.dd-head onclick="toggleBox(this)"}
+
+Takeaway
+:::
+:::{.dd-box}
+
+- Materials modeling is:
+  - Multiscale
+  - Interdisciplinary
+  - Increasingly data-driven
+
+- The future belongs to people who can:
+  - Combine **physics + computation + data**
+
+Do you need all of these before you start? No. But a strong foundation in physics and passion to learn is essential. The rest (including programming) can be learned as needed. 
+:::
+::::
+
+
+
+
