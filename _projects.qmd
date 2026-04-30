@@ -1,0 +1,26 @@
+---
+title: Current Projects
+---
+
+Continuation of Ms. Shaheen's work:
+
+
+- Phase Transitions
+(Motivation)
+- Anion exchange induced (Easy, MS level)
+- Defect induced (Easy)
+
+- Electron phonon coupling
+- Polaron formation
+- Multiexciton generation
+
+Topological materials
+
+- Data-driven
+- PINNs on Topological Materials
+
+High Physics 
+
+
+- Electrocatalysis
+(Device level modeling)
