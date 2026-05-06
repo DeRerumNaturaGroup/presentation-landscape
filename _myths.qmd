@@ -1,4 +1,3 @@
-## Common Myths & Misconceptions in Materials Modeling
 
 
 ::::{.ddm}

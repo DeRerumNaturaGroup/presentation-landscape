@@ -9,18 +9,14 @@ Academic and Professional
 
 ::::{.columns}
 :::{.column}
-- Started with electronics.
-- Switched to physics for Masters at Indiana University.
-- Ended with some mixture of electrochemistry, materials science, and machine learning.
 
-Work at GIK Institute. 
-Small university next to Tarbela lake. 
-100 km from the capital, Islamabad.
+abc
 
 
 :::
 :::{.column}
-![GIK Insitute. GIK being the initials of Ghulam Ishaq Khan, former president of Pakistan.](figs/family/giki.jpg)
+xyz
+
 :::
 ::::
 

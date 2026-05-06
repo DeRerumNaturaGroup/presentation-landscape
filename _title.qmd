@@ -1,5 +1,13 @@
 
-<!-- ![](_figs/treelogo.png){width="1%"} -->
+## {.center background-color="white"}
+
+<!-- ![](figs/logowhite.png){width=2in} -->
+
+<!-- <img src="figs/logowhite.png" style="display: flex; align-items: center; width: 25%; height: auto;"> -->
+
+<img src="figs/logowhite.png" style="display: block; margin: 0 auto; width: 20%; height: auto;">
+
+#
 <br>
 <br>
 
@@ -23,12 +31,12 @@ Sheharyar Pervez
 
 :::
 :::{.dd-box style="background:LightCoral; color:black"}
-[(She.HER.yar)]{style="font-size:0.7em"}
+<!-- [(She.HER.yar)]{style="font-size:0.7em"}
 
 
 [She = **She**ll; har = **Her**;]{style="font-size:0.7em"} \
 [yar = **yar**n]{style="font-size:0.7em"} \
-[But feel free to say it anyway you like.]{style="font-size:0.7em"}
+[But feel free to say it anyway you like.]{style="font-size:0.7em"} -->
 :::
 ::::
 

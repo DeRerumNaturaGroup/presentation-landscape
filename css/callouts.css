@@ -17,7 +17,7 @@
       border-top-left-radius: 20px;
       border-bottom-left-radius: 20px;
       border-bottom-right-radius: 20px;
-      font-size: 1em;
+      font-size: 0.75em;
       font-weight: bold;
       background-size: 40px;
       background-repeat: no-repeat;
@@ -33,6 +33,7 @@
       background-color: white;
       border-bottom-right-radius: 10px;
       display: none; /* Initially hide the container */
+      font-size: 0.75em;
     }
 
 /*----Dropdown Minimal------*/

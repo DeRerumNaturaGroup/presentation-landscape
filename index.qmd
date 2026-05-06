@@ -1,15 +1,15 @@
 ---
-title: "."
+title: ""
 format:
     revealjs:
         title-slide-attributes:
-            data-background-image: figs/treelogo.png
-            data-background-size: 50px
+            data-background-image: figs/logo.png
+            data-background-size: 200px
         width: 1600
         height: 900
         margin: 0.1
         theme: [default, css/style.scss]
-        css: [css/style.css, css/buttons.css, css/tabs.css, css/callouts.css, css/nav.css, css/revealhacks.css]
+        css: [css/style.css, css/buttons.css, css/tabs.css, css/callouts.css, css/nav.css, css/revealhacks.css, css/quickfix.css]
         subtitle: ""
         author: ""
         toc: FALSE
@@ -20,7 +20,7 @@ format:
         auto-animate-duration: 1.5   
         transition: convex
         background-transition: fade
-        logo: figs/treelogo.png
+        logo: figs/logo.png
         ligthbox: auto
         engine: jupyter 
         scrollable: true           
@@ -39,7 +39,7 @@ editor: source
 
 
 
-## Common Myths & Misconceptions {.scrollable}
+## Common Myths & Misconceptions in Materials Modeling {.scrollable}
 
 {{< include _myths.qmd >}}
 
@@ -54,6 +54,14 @@ editor: source
 ## Skill Set {.scrollable}
 
 {{< include _skills.qmd >}}
+
+## Materials you can model {.scrollable}
+
+{{< include _materials.qmd >}}
+
+## Open Projects {.scrollable}
+
+{{< include _projects.qmd >}}
 
 ## About me {.scrollable}
 

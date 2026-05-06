@@ -1,0 +1,9 @@
+/*
+Source - https://stackoverflow.com/a/78257800
+Posted by nrennie
+Retrieved 2026-05-01, License - CC BY-SA 4.0
+*/
+
+.reveal .slide-logo {
+  z-index: -999 !important;
+}

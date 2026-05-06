@@ -2,13 +2,22 @@
 title: Current Projects
 ---
 
+<!-- 
+Tabs:
+- Defects
+- Phase transitions
+- ML driven
+    - PINNs for  
+
+ -->
+
 Continuation of Ms. Shaheen's work:
 
 
 - Phase Transitions
 (Motivation)
-- Anion exchange induced (Easy, MS level)
-- Defect induced (Easy)
+    - Anion exchange induced (Easy, MS level)
+    - Defect induced (Easy)
 
 - Electron phonon coupling
 - Polaron formation
