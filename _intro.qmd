@@ -1,6 +1,10 @@
 
-## What is Materials Modeling?
 
+::::{.ddm}
+:::{.dd-head onclick="toggleBox(this)" style=""}
+What is Materials Modeling?
+:::
+:::{.dd-box}
 - Use of **physics-based or data-driven methods** to understand and predict material behavior  
 - Bridges **theory ↔ experiment ↔ application**
 - Enables:
@@ -9,11 +13,16 @@
   - Understanding mechanisms at multiple scales
 
 **Core idea:** Replace expensive experiments with **predictive computation**
+:::
+::::
 
----
 
-## Why It Matters
 
+::::{.ddm}
+:::{.dd-head onclick="toggleBox(this)" style=""}
+Why It Matters
+:::
+:::{.dd-box}
 - Reduces cost and time in materials discovery
 - Enables exploration of **impossible-to-test conditions**
 - Drives innovation in:
@@ -21,33 +30,54 @@
   - Semiconductors
   - Biomaterials
   - Nanotechnology
+:::
+::::
 
----
 
-## The Multiscale Nature
 
+::::{.ddm}
+:::{.dd-head onclick="toggleBox(this)" style=""}
+The Multiscale Nature
+:::
+:::{.dd-box}
 - Materials behavior spans:
   - **Electrons → atoms → microstructure → devices**
 - No single method covers everything
 
 **Key challenge:** Linking scales consistently
 
-## Where you start depends on your question and background.
+Where you start depends on your question and background.
 What you need to know depends on what you want to do. You can start with a simple model and build up as needed. The important thing is to understand the assumptions and limitations of your chosen method.
+:::
+::::
 
-## How you can contribute
+
+
+::::{.ddm}
+:::{.dd-head onclick="toggleBox(this)" style=""}
+How you can contribute
+:::
+:::{.dd-box}
 - Materials modeling is a **team sport**. It requires collaboration between theorists, experimentalists, and data scientists.
 - You can contribute by:
   - Developing new methods
   - Applying existing methods to new problems
   - Validating models with experiments
   - Sharing data and code openly
+:::
+::::
+
+
+
+
+
+
 
 ---
 
-## Major Branches of Materials Modeling
+Major Branches of Materials Modeling
 
-### Quantum Mechanical Methods
+#Quantum Mechanical Methods
 
 - Based on **first principles (ab initio)**
 - Examples:
@@ -59,9 +89,9 @@ What you need to know depends on what you want to do. You can start with a simpl
 
 ---
 
-## Major Branches (continued)
+Major Branches (continued)
 
-### Atomistic Simulations
+#Atomistic Simulations
 
 - Treat atoms explicitly
 - Examples:
@@ -75,9 +105,9 @@ What you need to know depends on what you want to do. You can start with a simpl
 
 ---
 
-## Major Branches (continued)
+Major Branches (continued)
 
-### Mesoscale Modeling
+#Mesoscale Modeling
 
 - Coarse-grained descriptions
 - Examples:
@@ -91,9 +121,9 @@ What you need to know depends on what you want to do. You can start with a simpl
 
 ---
 
-## Major Branches (continued)
+Major Branches (continued)
 
-### Continuum Modeling
+#Continuum Modeling
 
 - Treat material as continuous medium
 - Examples:
@@ -105,9 +135,9 @@ What you need to know depends on what you want to do. You can start with a simpl
 
 ---
 
-## Emerging Direction
+Emerging Direction
 
-### Data-Driven Modeling
+#Data-Driven Modeling
 
 - Machine Learning + Materials Science
 - Examples:

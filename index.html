@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="">
-  <title>index</title>
+  <title>Current Projects</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-f9544b3392395eeaa37b0a23bba93854.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-6d0a96983c44b9199a880b214890c355.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/buttons.css">
   <link rel="stylesheet" href="css/tabs.css">
@@ -218,7 +218,13 @@
   <div class="reveal">
     <div class="slides">
 
+<section id="title-slide" data-background-image="figs/logo.png" data-background-size="200px" class="quarto-title-block center">
+  <h1 class="title">Current Projects</h1>
 
+<div class="quarto-title-authors">
+</div>
+
+</section>
 <section id="section" class="slide level2 center">
 <h2></h2>
 </section>
@@ -325,16 +331,14 @@
 </div>
 </div>
 <!-- style="background-color: #d9534f;" -->
-<div class="ddm">
-<div class="dd-head" onclick="toggleBox(this)" style="background-color: #d9534f;">
-<p>Common Pitfall</p>
-</div>
-<div class="dd-box">
-<blockquote>
-<p>Pretty plots do not guarantee correct science.</p>
-</blockquote>
-</div>
-</div>
+<!-- ::::{.ddm}
+:::{.dd-head onclick="toggleBox(this)" style="background-color: #d9534f;"}
+Common Pitfall
+:::
+:::{.dd-box}
+> Pretty plots do not guarantee correct science.
+:::
+:::: -->
 <div class="ddm">
 <div class="dd-head" onclick="toggleBox(this)" style="background-color: #1c445e;">
 <p>Final Perspective</p>
@@ -632,7 +636,7 @@ Figure&nbsp;1: The five methods of computational materials science, arranged lef
 </section>
 <section id="method-summary" class="slide level2">
 <h2>Method summary</h2>
-<div id="tbl-methods" class="quarto-float quarto-figure quarto-figure-center" style="font-size: 0.67em; margin: 1rem auto;" data-tbl-colwidths="[15,28,20,7,30]">
+<div id="tbl-methods" class="quarto-float quarto-figure quarto-figure-center" data-tbl-colwidths="[15,28,20,7,30]" style="font-size: 0.67em; margin: 1rem auto;">
 <figure class="quarto-float quarto-float-tbl">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-methods-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;1: Key properties of each method
@@ -705,11 +709,112 @@ Table&nbsp;1: Key properties of each method
 <p>Classical Monte Carlo and molecular dynamics extend the reach of DFT-computed energy surfaces to longer times and larger supercells.</p>
 <p>Finally, the large databases of DFT-labeled structures and MC trajectories (e.g., the Materials Project) serve as training data for machine-learning interatomic potentials and cheminformatics models, enabling screening at scales that are completely intractable for first-principles methods.</p>
 </section>
+<section id="common-pitfalls" class="slide level2 scrollable">
+<h2>Common Pitfalls</h2>
+<div class="ddm">
+<div class="dd-head" onclick="toggleBox(this)" style="background-color: #d9534f;">
+<p>No Clear Research Question</p>
+</div>
+<div class="dd-box">
+<p>Starting with “let’s simulate this system” is not a research direction. Without a well-defined question or hypothesis, you end up generating results without insight. Always anchor your work in something testable or explainable.</p>
+</div>
+</div>
+<div class="ddm">
+<div class="dd-head" onclick="toggleBox(this)" style="background-color: #d9534f;">
+<p>Tool-First Thinking</p>
+</div>
+<div class="dd-box">
+<p>Approaching research by choosing a software or method first (DFT, MD, ML) leads to shallow work. The physics and the problem should dictate the method—not the other way around.</p>
+</div>
+</div>
+<div class="ddm">
+<div class="dd-head" onclick="toggleBox(this)" style="background-color: #d9534f;">
+<p>Button-Clicking Mentality</p>
+</div>
+<div class="dd-box">
+<p>Running simulations without understanding the underlying assumptions reduces modeling to a mechanical task. True modeling requires awareness of what is being approximated and why.</p>
+</div>
+</div>
+<div class="ddm">
+<div class="dd-head" onclick="toggleBox(this)" style="background-color: #d9534f;">
+<p>Confusing Activity with Progress</p>
+</div>
+<div class="dd-box">
+<p>Submitting jobs, generating data, and making plots can feel productive—but they don’t guarantee understanding. Progress is measured by clearer reasoning and deeper insight, not computational output.</p>
+</div>
+</div>
+<div class="ddm">
+<div class="dd-head" onclick="toggleBox(this)" style="background-color: #d9534f;">
+<p>Avoiding “Why” Questions</p>
+</div>
+<div class="dd-box">
+<p>Stopping at observations (“energy decreased”, “band gap changed”) limits your growth. Real research begins when you ask why these changes occur and what mechanisms drive them.</p>
+</div>
+</div>
+<div class="ddm">
+<div class="dd-head" onclick="toggleBox(this)" style="background-color: #d9534f;">
+<p>Fear of Being Wrong</p>
+</div>
+<div class="dd-box">
+<p>Hesitating to interpret results or propose explanations slows progress. Modeling is inherently approximate—being wrong is part of the process, as long as your reasoning is explicit and testable.</p>
+</div>
+</div>
+<div class="ddm">
+<div class="dd-head" onclick="toggleBox(this)" style="background-color: #d9534f;">
+<p>Working in Isolation</p>
+</div>
+<div class="dd-box">
+<p>Ignoring existing literature or failing to connect with prior work leads to reinventing the wheel or missing context. Strong research builds on and engages with the broader field.</p>
+</div>
+</div>
+<div class="ddm">
+<div class="dd-head" onclick="toggleBox(this)" style="background-color: #d9534f;">
+<p>Chasing Novelty Over Understanding</p>
+</div>
+<div class="dd-box">
+<p>Using the latest methods or trends without depth leads to superficial results. Insight and clarity matter more than complexity or trendiness.</p>
+</div>
+</div>
+<div class="ddm">
+<div class="dd-head" onclick="toggleBox(this)" style="background-color: #d9534f;">
+<p>Ignoring Length and Time Scales</p>
+</div>
+<div class="dd-box">
+<p>Every method operates within specific scales. Applying a technique outside its appropriate regime leads to misleading conclusions. Always match the method to the scale of the problem.</p>
+</div>
+</div>
+<div class="ddm">
+<div class="dd-head" onclick="toggleBox(this)" style="background-color: #d9534f;">
+<p>Weak Scientific Communication</p>
+</div>
+<div class="dd-box">
+<p>Even solid work fails if it cannot be clearly explained. You should be able to state your question, method, assumptions, and conclusions in a coherent narrative.</p>
+</div>
+</div>
+<div class="ddm">
+<div class="dd-head" onclick="toggleBox(this)" style="background-color: #d9534f;">
+<p>Passive Learning</p>
+</div>
+<div class="dd-box">
+<p>Watching tutorials or reading papers without active engagement creates an illusion of understanding. Real learning comes from attempting, failing, and refining your approach.</p>
+</div>
+</div>
+<div class="ddm">
+<div class="dd-head" onclick="toggleBox(this)" style="background-color: #d9534f;">
+<p>Lack of Scientific Taste</p>
+</div>
+<div class="dd-box">
+<p>Not all problems are equally meaningful, and not all results are equally trustworthy. Developing judgment about what matters and what is reliable is essential—and comes from experience and reflection.</p>
+</div>
+</div>
+</section>
 <section id="the-landscape" class="slide level2 scrollable">
 <h2>The Landscape</h2>
-</section>
-<section id="what-is-materials-modeling" class="slide level2">
-<h2>What is Materials Modeling?</h2>
+<div class="ddm">
+<div class="dd-head" onclick="toggleBox(this)" style="">
+<p>What is Materials Modeling?</p>
+</div>
+<div class="dd-box">
 <ul>
 <li>Use of <strong>physics-based or data-driven methods</strong> to understand and predict material behavior<br>
 </li>
@@ -722,9 +827,13 @@ Table&nbsp;1: Key properties of each method
 </ul></li>
 </ul>
 <p><strong>Core idea:</strong> Replace expensive experiments with <strong>predictive computation</strong></p>
-</section>
-<section id="why-it-matters" class="slide level2">
-<h2>Why It Matters</h2>
+</div>
+</div>
+<div class="ddm">
+<div class="dd-head" onclick="toggleBox(this)" style="">
+<p>Why It Matters</p>
+</div>
+<div class="dd-box">
 <ul>
 <li>Reduces cost and time in materials discovery</li>
 <li>Enables exploration of <strong>impossible-to-test conditions</strong></li>
@@ -736,9 +845,13 @@ Table&nbsp;1: Key properties of each method
 <li>Nanotechnology</li>
 </ul></li>
 </ul>
-</section>
-<section id="the-multiscale-nature" class="slide level2">
-<h2>The Multiscale Nature</h2>
+</div>
+</div>
+<div class="ddm">
+<div class="dd-head" onclick="toggleBox(this)" style="">
+<p>The Multiscale Nature</p>
+</div>
+<div class="dd-box">
 <ul>
 <li>Materials behavior spans:
 <ul>
@@ -747,13 +860,14 @@ Table&nbsp;1: Key properties of each method
 <li>No single method covers everything</li>
 </ul>
 <p><strong>Key challenge:</strong> Linking scales consistently</p>
-</section>
-<section id="where-you-start-depends-on-your-question-and-background." class="slide level2">
-<h2>Where you start depends on your question and background.</h2>
-<p>What you need to know depends on what you want to do. You can start with a simple model and build up as needed. The important thing is to understand the assumptions and limitations of your chosen method.</p>
-</section>
-<section id="how-you-can-contribute" class="slide level2">
-<h2>How you can contribute</h2>
+<p>Where you start depends on your question and background. What you need to know depends on what you want to do. You can start with a simple model and build up as needed. The important thing is to understand the assumptions and limitations of your chosen method.</p>
+</div>
+</div>
+<div class="ddm">
+<div class="dd-head" onclick="toggleBox(this)" style="">
+<p>How you can contribute</p>
+</div>
+<div class="dd-box">
 <ul>
 <li>Materials modeling is a <strong>team sport</strong>. It requires collaboration between theorists, experimentalists, and data scientists.</li>
 <li>You can contribute by:
@@ -764,10 +878,13 @@ Table&nbsp;1: Key properties of each method
 <li>Sharing data and code openly</li>
 </ul></li>
 </ul>
+</div>
+</div>
 </section>
-<section id="major-branches-of-materials-modeling" class="slide level2">
-<h2>Major Branches of Materials Modeling</h2>
-<h3 id="quantum-mechanical-methods">Quantum Mechanical Methods</h3>
+<section class="slide level2">
+
+<p>Major Branches of Materials Modeling</p>
+<p>#Quantum Mechanical Methods</p>
 <ul>
 <li>Based on <strong>first principles (ab initio)</strong></li>
 <li>Examples:
@@ -782,9 +899,10 @@ Table&nbsp;1: Key properties of each method
 </ul></li>
 </ul>
 </section>
-<section id="major-branches-continued" class="slide level2">
-<h2>Major Branches (continued)</h2>
-<h3 id="atomistic-simulations">Atomistic Simulations</h3>
+<section class="slide level2">
+
+<p>Major Branches (continued)</p>
+<p>#Atomistic Simulations</p>
 <ul>
 <li>Treat atoms explicitly</li>
 <li>Examples:
@@ -800,9 +918,10 @@ Table&nbsp;1: Key properties of each method
 </ul></li>
 </ul>
 </section>
-<section id="major-branches-continued-1" class="slide level2">
-<h2>Major Branches (continued)</h2>
-<h3 id="mesoscale-modeling">Mesoscale Modeling</h3>
+<section class="slide level2">
+
+<p>Major Branches (continued)</p>
+<p>#Mesoscale Modeling</p>
 <ul>
 <li>Coarse-grained descriptions</li>
 <li>Examples:
@@ -818,9 +937,10 @@ Table&nbsp;1: Key properties of each method
 </ul></li>
 </ul>
 </section>
-<section id="major-branches-continued-2" class="slide level2">
-<h2>Major Branches (continued)</h2>
-<h3 id="continuum-modeling">Continuum Modeling</h3>
+<section class="slide level2">
+
+<p>Major Branches (continued)</p>
+<p>#Continuum Modeling</p>
 <ul>
 <li>Treat material as continuous medium</li>
 <li>Examples:
@@ -834,9 +954,10 @@ Table&nbsp;1: Key properties of each method
 </ul></li>
 </ul>
 </section>
-<section id="emerging-direction" class="slide level2">
-<h2>Emerging Direction</h2>
-<h3 id="data-driven-modeling">Data-Driven Modeling</h3>
+<section class="slide level2">
+
+<p>Emerging Direction</p>
+<p>#Data-Driven Modeling</p>
 <ul>
 <li>Machine Learning + Materials Science</li>
 <li>Examples:
@@ -950,6 +1071,115 @@ Bad modeling &gt; no modeling</p>
 </ul></li>
 </ul>
 <p>Do you need all of these before you start? No.&nbsp;But a strong foundation in physics and passion to learn is essential. The rest (including programming) can be learned as needed.</p>
+</div>
+</div>
+</section>
+<section id="materials-you-can-model" class="slide level2 scrollable">
+<h2>Materials you can model</h2>
+<p>The choice is essentially infinite.</p>
+<ul>
+<li>Metal Organic Frameworks (MOFs)</li>
+<li>Perovskites</li>
+<li>TMOs</li>
+<li>Polymers</li>
+<li>2D materials</li>
+<li>Topological materials</li>
+</ul>
+</section>
+<section id="open-projects" class="slide level2 scrollable">
+<h2>Open Projects</h2>
+<!-- 
+Tabs:
+- Defects
+- Phase transitions
+- ML driven
+    - PINNs for  
+
+ -->
+<p>Continuation of Ms.&nbsp;Shaheen’s work:</p>
+<ul>
+<li>Phase Transitions (Motivation)
+<ul>
+<li>Anion exchange induced (Easy, MS level)</li>
+<li>Defect induced (Easy)</li>
+</ul></li>
+<li>Electron phonon coupling</li>
+<li>Polaron formation</li>
+<li>Multiexciton generation</li>
+</ul>
+<p>Topological materials</p>
+<ul>
+<li>Data-driven</li>
+<li>PINNs on Topological Materials</li>
+</ul>
+<p>High Physics</p>
+<ul>
+<li><p>Electrocatalysis (Device level modeling)</p></li>
+<li><p>inelastic heat engines</p></li>
+<li><p>Floquet drives</p></li>
+<li><p>Jacutingaites.</p></li>
+</ul>
+<div class="ddm">
+<div class="dd-head" onclick="toggleBox(this)" style="background-color: #d9534f;">
+<p>Anion Exchange–Induced Phase Transition</p>
+</div>
+<div class="dd-box">
+<p><strong>Project:</strong> Study partial anion substitution and its effect on structural stability and phase boundaries.</p>
+<p><strong>Hypothesis:</strong> Partial anion substitution stabilizes metastable phases by reducing lattice strain energy more than it disrupts bonding, enabling tunable phase transitions.</p>
+</div>
+</div>
+<div class="ddm">
+<div class="dd-head" onclick="toggleBox(this)" style="background-color: #d9534f;">
+<p>Defect-Induced Phase Transition</p>
+</div>
+<div class="dd-box">
+<p><strong>Project:</strong> Investigate how increasing defect concentration alters structural symmetry and phase stability.</p>
+<p><strong>Hypothesis:</strong> Above a critical defect concentration, local symmetry breaking percolates through the lattice, triggering a global phase transition without external stimuli.</p>
+</div>
+</div>
+<div class="ddm">
+<div class="dd-head" onclick="toggleBox(this)" style="background-color: #d9534f;">
+<p>Electron–Phonon Coupling vs Dimensionality</p>
+</div>
+<div class="dd-box">
+<p><strong>Project:</strong> Compare electron–phonon coupling strength across bulk, 2D, and quasi-1D systems.</p>
+<p><strong>Hypothesis:</strong> Reduced dimensionality enhances electron–phonon coupling due to modified phonon dispersion and increased coupling phase space.</p>
+</div>
+</div>
+<div class="ddm">
+<div class="dd-head" onclick="toggleBox(this)" style="background-color: #d9534f;">
+<p>Polaron Formation in Soft Lattices</p>
+</div>
+<div class="dd-box">
+<p><strong>Project:</strong> Model carrier localization and lattice distortion in materials with low elastic stiffness.</p>
+<p><strong>Hypothesis:</strong> Soft lattices favor polaron formation at lower carrier densities because the energetic cost of lattice deformation is reduced.</p>
+</div>
+</div>
+<div class="ddm">
+<div class="dd-head" onclick="toggleBox(this)" style="background-color: #d9534f;">
+<p>Strain-Tunable Topological Phase Transition</p>
+</div>
+<div class="dd-box">
+<p><strong>Project:</strong> Apply mechanical strain to near-critical materials and track band inversion behavior.</p>
+<p><strong>Hypothesis:</strong> Moderate strain can invert band ordering, enabling reversible switching between trivial and topological phases.</p>
+</div>
+</div>
+<div class="ddm">
+<div class="dd-head" onclick="toggleBox(this)" style="background-color: #d9534f;">
+<p>Data-Driven Discovery of Topological Materials</p>
+</div>
+<div class="dd-box">
+<p><strong>Project:</strong> Train machine learning models using symmetry-aware descriptors to identify topological materials.</p>
+<p><strong>Hypothesis:</strong> Incorporating symmetry information improves prediction of topological invariants compared to composition-only models.</p>
+</div>
+</div>
+<div class="ddm">
+<div class="dd-head" onclick="toggleBox(this)" style="background-color: #d9534f;">
+<p>Floquet Engineering of Band Topology</p>
+</div>
+<div class="dd-box">
+<p><strong>Project:</strong> Simulate periodically driven systems to explore emergent band structures.</p>
+<p><strong>Hypothesis:</strong> Periodic driving renormalizes effective Hamiltonian parameters, enabling topological phases absent in equilibrium.</p>
 </div>
 </div>
 </section>

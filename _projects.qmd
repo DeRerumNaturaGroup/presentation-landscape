@@ -33,3 +33,86 @@ High Physics
 
 - Electrocatalysis
 (Device level modeling)
+
+- inelastic heat engines
+
+- Floquet drives 
+
+- Jacutingaites. 
+
+::::{.ddm}
+:::{.dd-head onclick="toggleBox(this)" style="background-color: #d9534f;"}
+Anion Exchange–Induced Phase Transition
+:::
+:::{.dd-box}
+**Project:** Study partial anion substitution and its effect on structural stability and phase boundaries.
+
+**Hypothesis:** Partial anion substitution stabilizes metastable phases by reducing lattice strain energy more than it disrupts bonding, enabling tunable phase transitions.
+:::
+::::
+
+::::{.ddm}
+:::{.dd-head onclick="toggleBox(this)" style="background-color: #d9534f;"}
+Defect-Induced Phase Transition
+:::
+:::{.dd-box}
+**Project:** Investigate how increasing defect concentration alters structural symmetry and phase stability.
+
+**Hypothesis:** Above a critical defect concentration, local symmetry breaking percolates through the lattice, triggering a global phase transition without external stimuli.
+:::
+::::
+
+::::{.ddm}
+:::{.dd-head onclick="toggleBox(this)" style="background-color: #d9534f;"}
+Electron–Phonon Coupling vs Dimensionality
+:::
+:::{.dd-box}
+**Project:** Compare electron–phonon coupling strength across bulk, 2D, and quasi-1D systems.
+
+**Hypothesis:** Reduced dimensionality enhances electron–phonon coupling due to modified phonon dispersion and increased coupling phase space.
+:::
+::::
+
+::::{.ddm}
+:::{.dd-head onclick="toggleBox(this)" style="background-color: #d9534f;"}
+Polaron Formation in Soft Lattices
+:::
+:::{.dd-box}
+**Project:** Model carrier localization and lattice distortion in materials with low elastic stiffness.
+
+**Hypothesis:** Soft lattices favor polaron formation at lower carrier densities because the energetic cost of lattice deformation is reduced.
+:::
+::::
+
+::::{.ddm}
+:::{.dd-head onclick="toggleBox(this)" style="background-color: #d9534f;"}
+Strain-Tunable Topological Phase Transition
+:::
+:::{.dd-box}
+**Project:** Apply mechanical strain to near-critical materials and track band inversion behavior.
+
+**Hypothesis:** Moderate strain can invert band ordering, enabling reversible switching between trivial and topological phases.
+:::
+::::
+
+::::{.ddm}
+:::{.dd-head onclick="toggleBox(this)" style="background-color: #d9534f;"}
+Data-Driven Discovery of Topological Materials
+:::
+:::{.dd-box}
+**Project:** Train machine learning models using symmetry-aware descriptors to identify topological materials.
+
+**Hypothesis:** Incorporating symmetry information improves prediction of topological invariants compared to composition-only models.
+:::
+::::
+
+::::{.ddm}
+:::{.dd-head onclick="toggleBox(this)" style="background-color: #d9534f;"}
+Floquet Engineering of Band Topology
+:::
+:::{.dd-box}
+**Project:** Simulate periodically driven systems to explore emergent band structures.
+
+**Hypothesis:** Periodic driving renormalizes effective Hamiltonian parameters, enabling topological phases absent in equilibrium.
+:::
+::::

@@ -37,15 +37,18 @@ editor: source
 {{< include _title.qmd >}}
 
 
-
-
 ## Common Myths & Misconceptions in Materials Modeling {.scrollable}
 
 {{< include _myths.qmd >}}
 
+
 ## {.scrollable}
 
 {{< include _methods.qmd >}}
+
+## Common Pitfalls {.scrollable}
+
+{{< include _pitfalls.qmd >}}
 
 ## The Landscape {.scrollable}
 

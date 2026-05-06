@@ -65,14 +65,14 @@ Myth 5: Machine learning will replace physics
 <!-- style="background-color: #d9534f;" -->
 
 
-::::{.ddm}
+<!-- ::::{.ddm}
 :::{.dd-head onclick="toggleBox(this)" style="background-color: #d9534f;"}
 Common Pitfall
 :::
 :::{.dd-box}
 > Pretty plots do not guarantee correct science.
 :::
-::::
+:::: -->
 
 ::::{.ddm}
 :::{.dd-head onclick="toggleBox(this)" style="background-color: #1c445e;"}
