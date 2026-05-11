@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quantum ESPRESSO Workflow</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0e14;
+    --panel: #0f1520;
+    --border: #1e2d45;
+    --accent: #00c8ff;
+    --accent2: #7b5ea7;
+    --amber: #f0a500;
+    --green: #29d98a;
+    --coral: #ff6b6b;
+    --text: #c8d8e8;
+    --muted: #5a7a99;
+    --mono: 'IBM Plex Mono', monospace;
+    --sans: 'IBM Plex Sans', sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    min-height: 100vh;
+    padding: 40px 24px 80px;
+    background-image:
+      radial-gradient(ellipse 80% 40% at 50% -10%, rgba(0,200,255,0.07) 0%, transparent 60%),
+      repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(30,45,69,0.3) 40px),
+      repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(30,45,69,0.3) 40px);
+  }
+
+  header {
+    max-width: 860px;
+    margin: 0 auto 48px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    animation: fadeDown 0.5s ease both;
+  }
+
+  header h1 {
+    font-family: var(--mono);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.04em;
+  }
+
+  header span {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+
+  .workflow {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .step {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 0 20px;
+    animation: fadeUp 0.4s ease both;
+  }
+
+  .step:nth-child(1) { animation-delay: 0.05s; }
+  .step:nth-child(2) { animation-delay: 0.10s; }
+  .step:nth-child(3) { animation-delay: 0.15s; }
+  .step:nth-child(4) { animation-delay: 0.20s; }
+  .step:nth-child(5) { animation-delay: 0.25s; }
+  .step:nth-child(6) { animation-delay: 0.30s; }
+  .step:nth-child(7) { animation-delay: 0.35s; }
+
+  .spine {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dot {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--panel);
+    border: 1.5px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--muted);
+    flex-shrink: 0;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+    z-index: 1;
+  }
+
+  .step:hover .dot {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(0,200,255,0.06);
+  }
+
+  .line {
+    width: 1.5px;
+    flex: 1;
+    background: linear-gradient(to bottom, var(--border), var(--border));
+    min-height: 20px;
+  }
+
+  .step:last-child .line { display: none; }
+
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 18px 20px;
+    margin-bottom: 12px;
+    transition: border-color 0.2s, background 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+  }
+
+  .step:hover .card {
+    border-color: var(--card-color, var(--accent));
+    background: color-mix(in srgb, var(--card-color, var(--accent)) 4%, var(--panel));
+  }
+
+  .step:hover .card::before { opacity: 1; }
+
+  .card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  .card-title {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--card-color, var(--accent));
+    letter-spacing: 0.02em;
+  }
+
+  .tag {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    font-weight: 500;
+    color: var(--card-color, var(--accent));
+    background: color-mix(in srgb, var(--card-color, var(--accent)) 12%, transparent);
+    border: 1px solid color-mix(in srgb, var(--card-color, var(--accent)) 30%, transparent);
+    border-radius: 3px;
+    padding: 2px 7px;
+    white-space: nowrap;
+  }
+
+  .card-desc {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.55;
+    margin-bottom: 12px;
+  }
+
+  .detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 8px;
+  }
+
+  .detail {
+    background: rgba(255,255,255,0.025);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 8px 10px;
+  }
+
+  .detail-label {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 3px;
+  }
+
+  .detail-val {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--text);
+  }
+
+  /* Branch layout for step 5 */
+  .branch-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 4px;
+  }
+
+  .branch-card {
+    background: rgba(255,255,255,0.025);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 10px 12px;
+    transition: border-color 0.2s;
+  }
+
+  .branch-card:hover { border-color: var(--amber); }
+
+  .branch-title {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--amber);
+    margin-bottom: 4px;
+  }
+
+  .branch-desc {
+    font-size: 0.72rem;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
+  .branch-exe {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--muted);
+    margin-top: 6px;
+    opacity: 0.7;
+  }
+
+  /* code block */
+  .code-block {
+    background: rgba(0,0,0,0.3);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 10px 12px;
+    margin-top: 10px;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: auto;
+  }
+
+  .code-block .kw { color: var(--accent); }
+  .code-block .val { color: var(--green); }
+  .code-block .cmt { color: var(--muted); font-style: italic; }
+  .code-block .sec { color: var(--amber); }
+
+  .optional-badge {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    color: var(--muted);
+    border: 1px dashed var(--border);
+    border-radius: 3px;
+    padding: 1px 6px;
+  }
+
+  .loop-note {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    font-size: 0.75rem;
+    color: var(--muted);
+    font-family: var(--mono);
+  }
+
+  .loop-note::before {
+    content: '↺';
+    color: var(--accent2);
+    font-size: 1rem;
+  }
+
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Quantum ESPRESSO — DFT Workflow</h1>
+  <span>plane-wave / pseudopotential / pw.x</span>
+</header>
+
+<div class="workflow">
+
+  <!-- Step 1: Structure -->
+  <div class="step" style="--card-color: var(--muted)">
+    <div class="spine">
+      <div class="dot">01</div>
+      <div class="line"></div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="card-title">Structure preparation</span>
+        <span class="tag">input</span>
+      </div>
+      <p class="card-desc">Define the crystal structure: lattice vectors, fractional atomic positions, and species. Obtain pseudopotential files (.upf) and place them in the pseudo/ directory.</p>
+      <div class="detail-grid">
+        <div class="detail">
+          <div class="detail-label">lattice</div>
+          <div class="detail-val">ibrav or free cell</div>
+        </div>
+        <div class="detail">
+          <div class="detail-label">pseudopotentials</div>
+          <div class="detail-val">ONCV, PAW, USPP</div>
+        </div>
+        <div class="detail">
+          <div class="detail-label">tools</div>
+          <div class="detail-val">VESTA, ASE, cif2cell</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step 2: Convergence tests -->
+  <div class="step" style="--card-color: var(--accent2)">
+    <div class="spine">
+      <div class="dot">02</div>
+      <div class="line"></div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="card-title">Convergence tests</span>
+        <span class="tag">pw.x</span>
+      </div>
+      <p class="card-desc">Before production runs, verify that total energy and forces are converged with respect to the plane-wave kinetic energy cutoff and k-point sampling density.</p>
+      <div class="detail-grid">
+        <div class="detail">
+          <div class="detail-label">ecutwfc</div>
+          <div class="detail-val">20–120 Ry (typical)</div>
+        </div>
+        <div class="detail">
+          <div class="detail-label">ecutrho</div>
+          <div class="detail-val">4–12 × ecutwfc</div>
+        </div>
+        <div class="detail">
+          <div class="detail-label">k-mesh</div>
+          <div class="detail-val">Monkhorst–Pack grid</div>
+        </div>
+        <div class="detail">
+          <div class="detail-label">smearing</div>
+          <div class="detail-val">Marzari–Vanderbilt, MP</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step 3: Relaxation -->
+  <div class="step" style="--card-color: var(--green)">
+    <div class="spine">
+      <div class="dot">03</div>
+      <div class="line"></div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="card-title">Geometry relaxation</span>
+        <div style="display:flex;gap:6px;align-items:center">
+          <span class="tag">pw.x</span>
+          <span class="optional-badge">optional</span>
+        </div>
+      </div>
+      <p class="card-desc">Minimize the Hellmann–Feynman forces and (for vc-relax) the stress tensor. Use relax for atomic positions only or vc-relax to also optimize the cell.</p>
+      <div class="code-block">
+<span class="cmt">! pw.x input snippet — relax</span>
+<span class="sec">&amp;CONTROL</span>
+  <span class="kw">calculation</span> = <span class="val">'relax'</span>
+  <span class="kw">etot_conv_thr</span> = <span class="val">1.0d-5</span>
+  <span class="kw">forc_conv_thr</span> = <span class="val">1.0d-4</span>
+<span class="sec">/</span>
+<span class="sec">&amp;IONS</span>
+  <span class="kw">ion_dynamics</span> = <span class="val">'bfgs'</span>
+<span class="sec">/</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step 4: SCF -->
+  <div class="step" style="--card-color: var(--accent)">
+    <div class="spine">
+      <div class="dot">04</div>
+      <div class="line"></div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="card-title">SCF ground state</span>
+        <span class="tag">pw.x</span>
+      </div>
+      <p class="card-desc">Self-consistent field calculation. Iteratively solve the Kohn–Sham equations until the charge density and total energy are converged. This provides the ground-state electron density used by all subsequent steps.</p>
+      <div class="code-block">
+<span class="cmt">! pw.x input snippet — scf</span>
+<span class="sec">&amp;CONTROL</span>
+  <span class="kw">calculation</span> = <span class="val">'scf'</span>
+<span class="sec">/</span>
+<span class="sec">&amp;SYSTEM</span>
+  <span class="kw">ibrav</span>  = <span class="val">0</span>
+  <span class="kw">nat</span>    = <span class="val">2</span>
+  <span class="kw">ntyp</span>   = <span class="val">1</span>
+  <span class="kw">ecutwfc</span> = <span class="val">60.0</span>
+<span class="sec">/</span>
+<span class="sec">&amp;ELECTRONS</span>
+  <span class="kw">conv_thr</span> = <span class="val">1.0d-8</span>
+<span class="sec">/</span>
+      </div>
+      <div class="detail-grid" style="margin-top:10px">
+        <div class="detail">
+          <div class="detail-label">output</div>
+          <div class="detail-val">charge density ρ(r)</div>
+        </div>
+        <div class="detail">
+          <div class="detail-label">output</div>
+          <div class="detail-val">KS wavefunctions</div>
+        </div>
+        <div class="detail">
+          <div class="detail-label">output</div>
+          <div class="detail-val">total energy E_tot</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step 5: Property calculations (branches) -->
+  <div class="step" style="--card-color: var(--amber)">
+    <div class="spine">
+      <div class="dot">05</div>
+      <div class="line"></div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="card-title">Property calculations</span>
+        <span class="tag">nscf / bands / ph</span>
+      </div>
+      <p class="card-desc">Using the fixed SCF charge density, compute electronic structure properties. Choose one or more branches depending on your target observable.</p>
+      <div class="branch-grid">
+        <div class="branch-card">
+          <div class="branch-title">DOS / PDOS</div>
+          <div class="branch-desc">Non-SCF on a dense k-mesh; smear eigenvalues onto an energy grid.</div>
+          <div class="branch-exe">pw.x (nscf) → dos.x / projwfc.x</div>
+        </div>
+        <div class="branch-card">
+          <div class="branch-title">Band structure</div>
+          <div class="branch-desc">Non-SCF along a high-symmetry k-path in the BZ.</div>
+          <div class="branch-exe">pw.x (bands) → bands.x</div>
+        </div>
+        <div class="branch-card">
+          <div class="branch-title">Phonons</div>
+          <div class="branch-desc">DFPT linear response; compute interatomic force constants.</div>
+          <div class="branch-exe">ph.x → q2r.x → matdyn.x</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step 6: Post-processing -->
+  <div class="step" style="--card-color: var(--coral)">
+    <div class="spine">
+      <div class="dot">06</div>
+      <div class="line"></div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="card-title">Post-processing</span>
+        <span class="tag">pp.x · bands.x · dos.x</span>
+      </div>
+      <p class="card-desc">Extract and format computed quantities — charge/spin density, electrostatic potential, projected wavefunctions — for visualization and analysis.</p>
+      <div class="detail-grid">
+        <div class="detail">
+          <div class="detail-label">pp.x</div>
+          <div class="detail-val">charge density, potential, STM</div>
+        </div>
+        <div class="detail">
+          <div class="detail-label">dos.x</div>
+          <div class="detail-val">total & partial DOS</div>
+        </div>
+        <div class="detail">
+          <div class="detail-label">bands.x</div>
+          <div class="detail-val">unfolded band data</div>
+        </div>
+        <div class="detail">
+          <div class="detail-label">projwfc.x</div>
+          <div class="detail-val">orbital projections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step 7: Analysis -->
+  <div class="step" style="--card-color: var(--green)">
+    <div class="spine">
+      <div class="dot">07</div>
+      <div class="line"></div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="card-title">Visualization &amp; interpretation</span>
+        <span class="tag">analysis</span>
+      </div>
+      <p class="card-desc">Plot electronic band structure, DOS, phonon dispersion, isosurfaces. Compare against experimental data or literature. Iterate on the model if needed.</p>
+      <div class="detail-grid">
+        <div class="detail">
+          <div class="detail-label">3D visualization</div>
+          <div class="detail-val">VESTA, XCrySDen</div>
+        </div>
+        <div class="detail">
+          <div class="detail-label">plotting</div>
+          <div class="detail-val">gnuplot, matplotlib</div>
+        </div>
+        <div class="detail">
+          <div class="detail-label">automation</div>
+          <div class="detail-val">ASE, AiiDA, Pymatgen</div>
+        </div>
+        <div class="detail">
+          <div class="detail-label">workflow mgmt</div>
+          <div class="detail-val">AiiDA, Fireworks</div>
+        </div>
+      </div>
+      <div class="loop-note">Refine structure, pseudopotentials, or cutoffs and repeat from step 2 or 4</div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
