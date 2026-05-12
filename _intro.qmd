@@ -2,15 +2,12 @@
 
 ::::{.ddm}
 :::{.dd-head onclick="toggleBox(this)" style=""}
-What is Materials Modeling?
+Why we care about materials and what is Materials Modeling?
 :::
 :::{.dd-box}
-- Use of **physics-based or data-driven methods** to understand and predict material behavior  
-- Bridges **theory ↔ experiment ↔ application**
-- Enables:
-  - Property prediction before synthesis
-  - Design of new materials
-  - Understanding mechanisms at multiple scales
+We care about materials becasue they are in our phones, batteries, solar panels, medicines, cars, and what not.
+
+<r>Materials Modeling</r> is the use of **physics-based or data-driven methods** to understand and predict material behavior. 
 
 **Core idea:** Replace expensive experiments with **predictive computation**
 :::
@@ -23,6 +20,13 @@ What is Materials Modeling?
 Why It Matters
 :::
 :::{.dd-box}
+Materials modeling:
+- Bridges **theory ↔ experiment ↔ application**
+- Enables:
+  - Property prediction before synthesis
+  - Design of new materials
+  - Understanding mechanisms at multiple scales
+  
 - Reduces cost and time in materials discovery
 - Enables exploration of **impossible-to-test conditions**
 - Drives innovation in:

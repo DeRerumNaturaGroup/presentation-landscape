@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>myths</title>
+<title>Using ASE</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,18 +23,18 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="_myths_files/libs/clipboard/clipboard.min.js"></script>
-<script src="_myths_files/libs/quarto-html/quarto.js" type="module"></script>
-<script src="_myths_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="_myths_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="_myths_files/libs/quarto-html/popper.min.js"></script>
-<script src="_myths_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="_myths_files/libs/quarto-html/anchor.min.js"></script>
-<link href="_myths_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="_myths_files/libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="_myths_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="_myths_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="_myths_files/libs/bootstrap/bootstrap-9e3ffae467580fdb927a41352e75a2e0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="_ase_qe_files/libs/clipboard/clipboard.min.js"></script>
+<script src="_ase_qe_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="_ase_qe_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="_ase_qe_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="_ase_qe_files/libs/quarto-html/popper.min.js"></script>
+<script src="_ase_qe_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="_ase_qe_files/libs/quarto-html/anchor.min.js"></script>
+<link href="_ase_qe_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="_ase_qe_files/libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="_ase_qe_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="_ase_qe_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="_ase_qe_files/libs/bootstrap/bootstrap-9e3ffae467580fdb927a41352e75a2e0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -45,107 +45,33 @@ ul.task-list li input[type="checkbox"] {
 
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Using ASE</h1>
+</div>
 
 
 
-<div class="ddm">
-<div class="dd-head" onclick="toggleBox(this)">
-<p>Myth 1: Simulations are always accurate</p>
-</div>
-<div class="dd-box">
-<ul>
-<li>Models depend on:
-<ul>
-<li>Assumptions</li>
-<li>Approximations</li>
-<li>Parameter quality</li>
-</ul></li>
-<li><strong>Reality:</strong> All models have limits</li>
-</ul>
-</div>
-</div>
-<!--  -->
-<div class="ddm">
-<div class="dd-head" onclick="toggleBox(this)">
-<p>Myth 2: More expensive methods are always better</p>
-</div>
-<div class="dd-box">
-<ul>
-<li>Higher-level methods cost more computationally</li>
-<li>May not be necessary for every problem</li>
-<li><strong>Reality:</strong> Best method = right balance of accuracy + scale + efficiency</li>
-</ul>
-</div>
-</div>
-<div class="ddm">
-<div class="dd-head" onclick="toggleBox(this)">
-<p>Myth 3: Modeling replaces experiments</p>
-</div>
-<div class="dd-box">
-<ul>
-<li>Simulations guide and interpret experiments</li>
-<li>Experimental validation remains essential</li>
-<li><strong>Reality:</strong> Modeling and experiments are complementary</li>
-</ul>
-</div>
-</div>
-<div class="ddm">
-<div class="dd-head" onclick="toggleBox(this)">
-<p>Myth 4: Coding skill alone makes you a modeler</p>
-</div>
-<div class="dd-box">
-<ul>
-<li>Software operation ≠ scientific understanding</li>
-<li>Strong theory and physical intuition are critical</li>
-<li><strong>Reality:</strong> Physics first, tools second</li>
-</ul>
-</div>
-</div>
-<div class="ddm">
-<div class="dd-head" onclick="toggleBox(this)">
-<p>Myth: Materials modeling is only at the atomic level</p>
-</div>
-<div class="dd-box">
-<p>Again. That’s false.</p>
-</div>
-</div>
-<div class="ddm">
-<div class="dd-head" onclick="toggleBox(this)">
-<p>Myth 5: Machine learning will replace physics</p>
-</div>
-<div class="dd-box">
-<ul>
-<li>ML is powerful but data-dependent</li>
-<li>Can fail outside training space</li>
-<li><strong>Reality:</strong> ML works best when combined with domain knowledge</li>
-</ul>
-</div>
-</div>
-<!-- style="background-color: #d9534f;" -->
-<!-- ::::{.ddm}
-:::{.dd-head onclick="toggleBox(this)" style="background-color: #d9534f;"}
-Common Pitfall
-:::
-:::{.dd-box}
-> Pretty plots do not guarantee correct science.
-:::
-:::: -->
-<div class="ddm">
-<div class="dd-head" onclick="toggleBox(this)" style="background-color: #1c445e;">
-<p>Final Perspective</p>
-</div>
-<div class="dd-box">
-<p><strong>Good materials modeling requires:</strong></p>
-<ul>
-<li>Scientific rigor</li>
-<li>Method selection</li>
-<li>Validation</li>
-<li>Critical thinking</li>
-</ul>
-<p><strong>Bottom line:</strong><br>
-Modeling is a decision-making tool, not magic.</p>
-</div>
-</div>
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="what-a-typical-qe-workflow-is-like" class="level2">
+<h2 class="anchored" data-anchor-id="what-a-typical-qe-workflow-is-like">What a typical QE Workflow is like</h2>
+<p>QE is not one code but a suite of codes.</p>
+<p><img src="figs/quantum_espresso_workflow.svg" class="img-fluid"></p>
+</section>
+<section id="what-is-working-with-ase-like" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-working-with-ase-like">What is working with ASE like</h2>
+</section>
 
 </main>
 <!-- /main column -->

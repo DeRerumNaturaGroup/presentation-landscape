@@ -1,0 +1,123 @@
+
+
+## The Problem with Quantum Mechanics
+Atoms and electrons obey **quantum mechanics**.
+
+BUT...
+
+For a material with many electrons:
+
+- Every electron interacts with every other electron
+- The equations become enormously complicated
+- Exact solutions quickly become impossible
+
+::: {.fragment}
+Even a tiny crystal contains **billions upon billions** of electrons.
+:::
+
+## So What Do Scientists Do?
+
+We use **approximations** that are:
+
+- Accurate enough to predict real behavior
+- Efficient enough to run on computers
+
+This is where **DFT** comes in.
+
+## What is DFT 
+
+
+## Density Functional Theory
+
+A computational method used to calculate the properties of materials from quantum mechanics.
+
+::: {.callout-note}
+Instead of tracking every electron individually, DFT focuses on the **electron density**.
+:::
+
+---
+
+## Electron Density
+
+Rather than asking:
+
+> "Where is each electron?"
+
+DFT asks:
+
+> "How much electronic charge exists at each point in space?"
+
+---
+
+## A Helpful Analogy
+
+Imagine trying to study traffic in a city.
+
+### Impossible approach:
+Track every single car individually.
+
+### Smarter approach:
+Study the **traffic density** instead.
+
+- Where is traffic concentrated?
+- How does it flow?
+- Where are the bottlenecks?
+
+DFT does something similar for electrons.
+
+---
+
+## The Central Idea of DFT
+
+The electron density contains enough information to determine:
+
+- Total energy
+- Bonding
+- Magnetism
+- Electrical behavior
+- Optical properties
+
+::: {.fragment}
+That idea was revolutionary.
+:::
+
+---
+
+## Why DFT Became Important
+
+DFT allows scientists to:
+
+- Design materials before experiments
+- Predict new compounds
+- Study defects and impurities
+- Understand catalysts
+- Explore battery materials
+- Investigate quantum materials
+
+---
+
+## What Does DFT Actually Compute?
+
+Typical outputs include:
+
+- Band structures
+- Charge density
+- Magnetic moments
+- Formation energies
+- Vibrational properties
+- Reaction pathways
+
+---
+
+## Example: Silicon
+
+DFT can help explain:
+
+- Why silicon is a semiconductor
+- How dopants modify conductivity
+- Why transistors work
+
+::: {.fragment}
+Modern electronics heavily depend on ideas enabled by DFT calculations.
+:::
+
