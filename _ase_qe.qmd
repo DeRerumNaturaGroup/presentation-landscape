@@ -1,12 +1,9 @@
----
-title: Using ASE
----
 
 ## What a typical QE Workflow is like
 
 QE is not one code but a suite of codes. 
 
-![](figs/quantum_espresso_workflow.svg)
+![](figs/quantum_espresso_workflow.svg){width=100%}
 
 
 ## What is working with ASE like 

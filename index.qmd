@@ -32,6 +32,10 @@ editor: source
 ---
 
 
+## {.scrollable}
+
+{{< include _ase_qe.qmd >}}
+
 ## {.center}
 
 {{< include _title.qmd >}}

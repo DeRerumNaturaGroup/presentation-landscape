@@ -57,22 +57,26 @@ What you need to know depends on what you want to do. You can start with a simpl
 
 
 
+
 ::::{.ddm}
 :::{.dd-head onclick="toggleBox(this)" style=""}
 How you can contribute
 :::
 :::{.dd-box}
-- Materials modeling is a **team sport**. It requires collaboration between theorists, experimentalists, and data scientists.
-- You can contribute by:
-  - Developing new methods
-  - Applying existing methods to new problems
-  - Validating models with experiments
-  - Sharing data and code openly
+<r> METHOD Developer</r>
+
+> Creates, refines, and validates the theoretical frameworks, algorithms, and software tools used to simulate and predict the behavior of materials
+
+<r> CODE Builder</r>
+
+Creates, maintains, and optimizes software used to simulate the physical and chemical properties of materials at atomic, molecular, or continuum scales
+
+<r> END User</r>
+
+Applies computational simulation software to understand, design, or optimize materials without necessarily developing the underlying simulation code themselves
+
 :::
 ::::
-
-
-
 
 
 
