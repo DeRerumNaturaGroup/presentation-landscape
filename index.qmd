@@ -26,15 +26,14 @@ format:
         scrollable: true           
 
 include-in-header:
-    file: scripts/scripts.js
-
+    - file: scripts/scripts.js
+    - file: scripts/LeaderLine/my-lines.js
+revealjs-plugins:
+  - leader-line
 editor: source
 ---
 
 
-## {.scrollable}
-
-{{< include _ase_qe.qmd >}}
 
 ## {.center}
 
@@ -45,18 +44,38 @@ editor: source
 
 {{< include _myths.qmd >}}
 
+## The Landscape {.scrollable}
+
+{{< include _intro.qmd >}}
+
+## {.scrollable}
+
+{{< include _dft.qmd >}}
+
+
+## {.scrollable}
+
+{{< include _ase_qe.qmd >}}
+
+## {.scrollable}
+
+<iframe 
+  src="figs/qe_workflow.html"
+  width="150%" 
+  height="100%"
+  style="border:none;">
+</iframe>
 
 ## {.scrollable}
 
 {{< include _methods.qmd >}}
 
+
+
 ## Common Pitfalls {.scrollable}
 
 {{< include _pitfalls.qmd >}}
 
-## The Landscape {.scrollable}
-
-{{< include _intro.qmd >}}
 
 ## Skill Set {.scrollable}
 
@@ -70,9 +89,9 @@ editor: source
 
 {{< include _projects.qmd >}}
 
-## About me {.scrollable}
+<!-- ## About me {.scrollable}
 
-{{< include _aboutme.qmd >}}
+{{< include _aboutme.qmd >}} -->
 
 
 

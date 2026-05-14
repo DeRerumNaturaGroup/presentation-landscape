@@ -57,7 +57,7 @@ Myth: Materials modeling is only at the atomic level
 :::
 :::{.dd-box}
 
-Again. That's false.
+Materials modeling spans every scale — from electrons and atoms to devices, factories, and entire engineering systems.
 
 :::
 ::::

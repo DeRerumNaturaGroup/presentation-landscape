@@ -1,9 +1,13 @@
 
-## What a typical QE Workflow is like
+## What a typical QE Workflow is like {.scrollable}
 
 QE is not one code but a suite of codes. 
 
-![](figs/quantum_espresso_workflow.svg){width=100%}
+<!-- ![](figs/quantum_espresso_workflow.svg){width=1200px} -->
 
+<!-- <img src="figs/quantum_espresso_workflow.svg" width="600px"> -->
+![](figs/quantum_espresso_workflow.png){width=1200}
+
+An understanding of each aspect is crucial.
 
 ## What is working with ASE like 

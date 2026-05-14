@@ -1,10 +1,10 @@
 
 
 ::::{.ddm}
-:::{.dd-head onclick="toggleBox(this)" style=""}
+:::{.ddm-head onclick="toggleBox(this)" style=""}
 Why we care about materials and what is Materials Modeling?
 :::
-:::{.dd-box}
+:::{.ddm-box}
 We care about materials becasue they are in our phones, batteries, solar panels, medicines, cars, and what not.
 
 <r>Materials Modeling</r> is the use of **physics-based or data-driven methods** to understand and predict material behavior. 
@@ -16,10 +16,10 @@ We care about materials becasue they are in our phones, batteries, solar panels,
 
 
 ::::{.ddm}
-:::{.dd-head onclick="toggleBox(this)" style=""}
-Why It Matters
+:::{.ddm-head onclick="toggleBox(this)" style=""}
+Why it matters
 :::
-:::{.dd-box}
+:::{.ddm-box}
 Materials modeling:
 - Bridges **theory ↔ experiment ↔ application**
 - Enables:
@@ -40,10 +40,10 @@ Materials modeling:
 
 
 ::::{.ddm}
-:::{.dd-head onclick="toggleBox(this)" style=""}
-The Multiscale Nature
+:::{.ddm-head onclick="toggleBox(this)" style=""}
+The multiscale nature of modeling
 :::
-:::{.dd-box}
+:::{.ddm-box}
 - Materials behavior spans:
   - **Electrons → atoms → microstructure → devices**
 - No single method covers everything
@@ -56,24 +56,78 @@ What you need to know depends on what you want to do. You can start with a simpl
 ::::
 
 
+::::{.ddm}
+:::{.ddm-head onclick="toggleBox(this)"}
+Some active research groups
+:::
+:::{.ddm-box}
+- Electronic Structure / DFT / Quantum Materials
+  - Materials Project — High-throughput DFT database and computational materials discovery platform led from Lawrence Berkeley National Laboratory.
+  - OQMD — Open Quantum Materials Database; large-scale DFT infrastructure.
+  - NOMAD Laboratory — Major FAIR-data and materials informatics effort.
+  - Center for Computational Study of Excited-State Phenomena in Energy Materials (C2SEPEM) — Advanced excited-state and electronic-structure modeling.
+
+- Machine Learning for Materials
+  - FAIR Chemistry — AI foundation models for molecules and materials.
+  - DeepMind — Active in materials discovery and graph neural network methods.
+  - Microsoft Research — Strong activity in AI-guided materials design and sustainability modeling.
+  - Toyota Research Institute — ML-driven battery and materials discovery efforts.
+
+- Special Materials (MOFs / Porous Materials / Energy Materials...)
+  - Wilmer Lab — High-throughput screening and ML for MOFs.
+  - Snurr Research Group — Computational nanoporous materials and adsorption modeling.
+  - Smit Group — Molecular simulation of porous materials and separations.
+  - Kulik Group — ML + electronic structure for catalysts and framework materials.
+
+- Multiscale / Molecular Dynamics / Computational Mechanics
+  - LAMMPS Development Team — Central hub for atomistic simulation methods and MD workflows.
+  - Materials Theory Group at Imperial College London — Active in atomistic and mesoscale modeling.
+  - Max Planck Institute for Iron Research — Strong computational materials science division spanning DFT to continuum modeling.
+
+- Europe-Based Centers Strong for MSCA/Postdoc Opportunities
+  - Cecam — Major European network for computational materials science.
+  - Institute of Science and Technology Austria — Growing computational materials and ML ecosystem.
+  - Forschungszentrum Jülich — Large-scale HPC and materials modeling programs.
+
+
+:::
+::::
 
 
 ::::{.ddm}
-:::{.dd-head onclick="toggleBox(this)" style=""}
+:::{.ddm-head onclick="toggleBox(this)" style=""}
 How you can contribute
 :::
-:::{.dd-box}
-<r> METHOD Developer</r>
+:::{.ddm-box}
 
-> Creates, refines, and validates the theoretical frameworks, algorithms, and software tools used to simulate and predict the behavior of materials
+::::{.ddp}
+:::{.ddp-head onclick="toggleBox(this)"}
+METHOD Developer
+:::
+:::{.ddp-box}
+Creates, refines, and validates the theoretical frameworks, algorithms, and software tools used to simulate and predict the behavior of materials
+:::
+::::
 
-<r> CODE Builder</r>
-
+::::{.ddp}
+:::{.ddp-head onclick="toggleBox(this)"}
+CODE Builder
+:::
+:::{.ddp-box}
 Creates, maintains, and optimizes software used to simulate the physical and chemical properties of materials at atomic, molecular, or continuum scales
+:::
+::::
 
-<r> END User</r>
-
+::::{.ddp}
+:::{.ddp-head onclick="toggleBox(this)"}
+END User
+:::
+:::{.ddp-box}
 Applies computational simulation software to understand, design, or optimize materials without necessarily developing the underlying simulation code themselves
+:::
+::::
+
+
 
 :::
 ::::
@@ -81,12 +135,33 @@ Applies computational simulation software to understand, design, or optimize mat
 
 
 
----
 
-Major Branches of Materials Modeling
 
-#Quantum Mechanical Methods
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Major Branches of Materials Modeling
+
+::::{.columns}
+:::{.column}
+<!-- column 1 -->
+::::{.ddm}
+:::{.dd-head onclick="toggleBox(this)"}
+Quantum Mechanical Methods
+:::
+:::{.dd-box}
 - Based on **first principles (ab initio)**
 - Examples:
   - Density Functional Theory (DFT)
@@ -94,13 +169,15 @@ Major Branches of Materials Modeling
   - Electronic structure
   - Band structure
   - Defects
+:::
+::::
 
----
 
-Major Branches (continued)
-
-#Atomistic Simulations
-
+::::{.ddm}
+:::{.dd-head onclick="toggleBox(this)"}
+Atomistic Simulations
+:::
+:::{.dd-box}
 - Treat atoms explicitly
 - Examples:
   - Molecular Dynamics (MD)
@@ -111,12 +188,15 @@ Major Branches (continued)
   - Thermal properties
   - Structural evolution
 
----
+:::
+::::
 
-Major Branches (continued)
 
-#Mesoscale Modeling
-
+::::{.ddm}
+:::{.dd-head onclick="toggleBox(this)"}
+Mesoscale Modeling
+:::
+:::{.dd-box}
 - Coarse-grained descriptions
 - Examples:
   - Phase-field models
@@ -127,12 +207,20 @@ Major Branches (continued)
   - Grain growth
   - Defect dynamics
 
----
+:::
+::::
 
-Major Branches (continued)
+:::
+:::{.column}
+<!-- column 2 -->
 
-#Continuum Modeling
 
+
+::::{.ddm}
+:::{.dd-head onclick="toggleBox(this)"}
+Continuum Modeling
+:::
+:::{.dd-box}
 - Treat material as continuous medium
 - Examples:
   - Finite Element Method (FEM)
@@ -141,12 +229,16 @@ Major Branches (continued)
   - Mechanical behavior
   - Device-scale simulations
 
----
+:::
+::::
 
-Emerging Direction
 
-#Data-Driven Modeling
 
+::::{.ddm}
+:::{.dd-head onclick="toggleBox(this)"}
+Data-Driven Modeling
+:::
+:::{.dd-box}
 - Machine Learning + Materials Science
 - Examples:
   - Property prediction models
@@ -155,4 +247,12 @@ Emerging Direction
 - Key shift:
   - From **physics-only → physics + data**
 
----
+:::
+::::
+<!-- column 2 end -->
+:::
+::::
+
+
+
+

@@ -1,6 +1,10 @@
 
 
-## The Problem with Quantum Mechanics
+::::{.ddm}
+:::{.ddm-head onclick="toggleBox(this)"}
+The Problem with Quantum Mechanics
+:::
+:::{.ddm-box}
 Atoms and electrons obey **quantum mechanics**.
 
 BUT...
@@ -14,9 +18,15 @@ For a material with many electrons:
 ::: {.fragment}
 Even a tiny crystal contains **billions upon billions** of electrons.
 :::
+:::
+::::
 
-## So What Do Scientists Do?
 
+::::{.ddm}
+:::{.ddm-head onclick="toggleBox(this)"}
+So What Do Scientists Do?
+:::
+:::{.ddm-box}
 We use **approximations** that are:
 
 - Accurate enough to predict real behavior
@@ -24,20 +34,22 @@ We use **approximations** that are:
 
 This is where **DFT** comes in.
 
-## What is DFT 
+:::
+::::
 
 
-## Density Functional Theory
+::::{.ddm}
+:::{.ddm-head onclick="toggleBox(this)"}
+DFT meaning Discrete Fourier Transform? 
+:::
+:::{.ddm-box}
+No. DFT = Density Functional Theory
 
 A computational method used to calculate the properties of materials from quantum mechanics.
 
 ::: {.callout-note}
 Instead of tracking every electron individually, DFT focuses on the **electron density**.
 :::
-
----
-
-## Electron Density
 
 Rather than asking:
 
@@ -47,27 +59,39 @@ DFT asks:
 
 > "How much electronic charge exists at each point in space?"
 
----
 
-## A Helpful Analogy
+:::
+::::
 
+
+::::{.ddm}
+:::{.ddm-head onclick="toggleBox(this)"}
+Explain like I'm 5
+:::
+:::{.ddm-box}
 Imagine trying to study traffic in a city.
 
-### Impossible approach:
-Track every single car individually.
+::::{.columns}
+:::{.column}
+Impossible approach
 
-### Smarter approach:
+Track every single car individually.
+:::
+:::{.column}
+Smarter approach
+
 Study the **traffic density** instead.
 
 - Where is traffic concentrated?
 - How does it flow?
 - Where are the bottlenecks?
+:::
+::::
+
 
 DFT does something similar for electrons.
 
----
-
-## The Central Idea of DFT
+[The Central Idea of DFT]{style="align:center; background-color: #f0f0f0; padding: 1em; border-radius: 5px;"}
 
 The electron density contains enough information to determine:
 
@@ -76,40 +100,72 @@ The electron density contains enough information to determine:
 - Magnetism
 - Electrical behavior
 - Optical properties
+:::
+::::
+
+
+
+
+
+---
+
+
 
 ::: {.fragment}
 That idea was revolutionary.
 :::
 
----
 
-## Why DFT Became Important
+::: {.fragment}
+DFT Became important because it allows scientists to compute:
 
-DFT allows scientists to:
 
-- Design materials before experiments
-- Predict new compounds
-- Study defects and impurities
-- Understand catalysts
-- Explore battery materials
-- Investigate quantum materials
 
----
 
-## What Does DFT Actually Compute?
 
-Typical outputs include:
 
-- Band structures
-- Charge density
-- Magnetic moments
-- Formation energies
-- Vibrational properties
-- Reaction pathways
 
----
 
-## Example: Silicon
+
+::::{.columns}
+:::{.column width="35%"}
+
+:::{#box1 style="align:center; color: white; background-color: #708D81; padding: 1em; border-radius: 5px;"}
+Band structures\
+Charge density\
+Magnetic moments\
+Formation energies\
+Vibrational properties\
+Reaction pathways
+:::
+:::
+:::{.column width="15%"}
+so that they can...
+:::
+:::{.column width="40%"}
+:::{.fragment}
+
+:::{#box2 style="align:center; color: white; background-color: #ce6454; padding: 1em; border-radius: 5px;"}
+Design materials before experiments \
+Predict new compounds \
+Study defects and impurities \ 
+Understand catalysts \ 
+Explore battery materials \
+Investigate quantum materials
+:::
+:::
+
+:::
+::::
+
+:::
+
+
+
+
+:::{.fragment}
+:::{style="align:left; color: white; background-color: #B796AC; padding: 1em; margin: 1em; border-radius: 5px;"}
+Example: Silicon
 
 DFT can help explain:
 
@@ -117,7 +173,7 @@ DFT can help explain:
 - How dopants modify conductivity
 - Why transistors work
 
-::: {.fragment}
 Modern electronics heavily depend on ideas enabled by DFT calculations.
+:::
 :::
 

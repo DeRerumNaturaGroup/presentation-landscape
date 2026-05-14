@@ -4,7 +4,7 @@ $presentation-heading-font: 'EBGaramond08', serif;
 $mainFont: 'EBGaramond08', sans-serif;
 $font-family-monospace: 'Ubuntu Mono';
 
-$presentation-font-size-root: 45px;
+$presentation-font-size-root: 40px;
 $presentation-h1-font-size:	1.8em;
 $presentation-h2-font-size:	1.2em;
 $presentation-h3-font-size:	1.1em;
@@ -40,3 +40,7 @@ r {
     text-underline-offset: 6px;
     // text-decoration-style: wavy;
   }
+
+ul {
+  line-height: 0.85; /* 1.5 to 1.6 is common for readability */
+}

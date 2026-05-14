@@ -6,11 +6,11 @@
 <script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.24">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.32">
 
   <meta name="author" content="">
-  <title>Current Projects</title>
+  <title>index</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-6d0a96983c44b9199a880b214890c355.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-8aa7c65d2ade9b65f6f4f32ae286fc2e.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/buttons.css">
   <link rel="stylesheet" href="css/tabs.css">
@@ -130,101 +130,172 @@
     }
   </style>
   <script src="scripts/jquery-3.6.4.min.js"></script>
-
   <script src="scripts/LeaderLine/leader-line.min.js"></script>
-
   
-
   
-
   
-
   
-
   <script>
-
   function toggleBox(header) {
-
       $(header).next('.dd-box, .ddm-box, .ddp-box').slideToggle("slow");
-
   }
-
   </script> 
-
   
-
   
-
   <script>
-
   function toggleDesc(header) {
-
       $(header).next('p').slideToggle("slow");
+  }
+  </script>
+  
+  
+  <script>
+      function showContent(clickedElement) {
+          // Hide all content divs
+          var allContents = document.getElementsByClassName('content');
+          for (var i = 0; i < allContents.length; i++) {
+              allContents[i].style.display = 'none';
+          }
+  
+          // Deactivate all nav options
+          var allNavOptions = document.getElementsByClassName('nav-option');
+          for (var i = 0; i < allNavOptions.length; i++) {
+              allNavOptions[i].classList.remove('active');
+          }
+  
+          // Show the selected content
+          var option = clickedElement.getAttribute('data-option');
+          document.getElementById(option + 'Content').style.display = 'block';
+  
+          // Activate the selected nav option
+          clickedElement.classList.add('active');
+      }
+  </script>
+  
+  <script>
+  /**
+   * Global registry and updater for all LeaderLine instances created via drawLeader.
+   * Handles:
+   *  - storing all lines
+   *  - repositioning all lines on resize/scroll
+   *  - smooth real-time repositioning during .pill transitions
+   */
+  const LeaderLineRegistry = {
+    lines: [],
+    animating: false,
+    _initialized: false,
 
+    /**
+     * Initialize one-time global event listeners for updating all registered lines.
+     * This runs only once, automatically when the first line is registered.
+     */
+    init() {
+      if (this._initialized) return;
+      this._initialized = true;
+
+      // Reposition all lines on window resize
+      window.addEventListener('resize', () => this.positionAll());
+
+      // Reposition all lines on scroll (capturing to catch scrolls on inner containers too)
+      document.addEventListener('scroll', () => this.positionAll(), true);
+
+      // Automatically add smooth animation loop for .pill transitions
+      const pills = document.querySelectorAll('.pill');
+      pills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          if (this.animating) return;
+          this.animating = true;
+
+          const step = () => {
+            this.positionAll();
+            if (this.animating) requestAnimationFrame(step);
+          };
+          requestAnimationFrame(step);
+        });
+
+        pill.addEventListener('transitionend', () => {
+          this.animating = false;
+          this.positionAll();
+        });
+      });
+    },
+
+    /**
+     * Register a newly created LeaderLine instance so it is tracked and updated.
+     * @param {LeaderLine} line - The LeaderLine object to register
+     */
+    register(line) {
+      this.init();
+      this.lines.push(line);
+    },
+
+    /**
+     * Calls .position() on every registered line to recalculate its endpoints.
+     */
+    positionAll() {
+      this.lines.forEach(line => line.position());
+    }
+  };
+
+  /**
+   * Creates two DOM anchor elements (if not already present) inside a container
+   * and draws a LeaderLine between them. Automatically registers the line
+   * into the global LeaderLineRegistry so it stays in sync with layout changes.
+   *
+   * @param {Object} config
+   * @param {string} [config.containerId='stage'] - The id of the container element
+   * @param {Object} config.from - The "from" anchor element config
+   * @param {string} config.from.id - DOM id of the starting element
+   * @param {string} [config.from.text] - Optional text content for the element
+   * @param {string} [config.from.className] - Optional CSS class
+   * @param {Object} [config.from.style] - Inline style object
+   * @param {Object} config.to - The "to" anchor element config (same fields as 'from')
+   * @param {Object} [config.lineOptions={}] - Options passed directly to new LeaderLine()
+   *
+   * @returns {Promise<LeaderLine>} Resolves with the created LeaderLine instance
+   */
+  function drawLeader(config) {
+    const { containerId='stage', from, to, lineOptions={} } = config;
+
+    return new Promise(resolve => {
+      window.addEventListener('load', () => {
+        const container = document.getElementById(containerId);
+        const elements = { from, to };
+        const createdDivs = {};
+
+        for (const key in elements) {
+          const { id, text, className, style } = elements[key];
+          let el = document.getElementById(id);
+
+          if (!el || !container.contains(el)) {
+            el = document.createElement('div');
+            el.id = id;
+            el.textContent = text || '';
+            el.className = className || 'anchor80-line';
+            Object.assign(el.style, { position: 'relative', ...style });
+            container.appendChild(el);
+          }
+
+          createdDivs[key] = el;
+        }
+
+        const line = new LeaderLine(createdDivs.from, createdDivs.to, lineOptions);
+        LeaderLineRegistry.register(line);
+        resolve(line);
+      });
+    });
   }
 
   </script>
 
-  
 
-  
-
-  <script>
-
-      function showContent(clickedElement) {
-
-          // Hide all content divs
-
-          var allContents = document.getElementsByClassName('content');
-
-          for (var i = 0; i < allContents.length; i++) {
-
-              allContents[i].style.display = 'none';
-
-          }
-
-  
-
-          // Deactivate all nav options
-
-          var allNavOptions = document.getElementsByClassName('nav-option');
-
-          for (var i = 0; i < allNavOptions.length; i++) {
-
-              allNavOptions[i].classList.remove('active');
-
-          }
-
-  
-
-          // Show the selected content
-
-          var option = clickedElement.getAttribute('data-option');
-
-          document.getElementById(option + 'Content').style.display = 'block';
-
-  
-
-          // Activate the selected nav option
-
-          clickedElement.classList.add('active');
-
-      }
-
-  </script>
 
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-image="figs/logo.png" data-background-size="200px" class="quarto-title-block center">
-  <h1 class="title">Current Projects</h1>
 
-<div class="quarto-title-authors">
-</div>
-
-</section>
 <section id="section" class="slide level2 center">
 <h2></h2>
 </section>
@@ -240,26 +311,24 @@
 <p><br> <br></p>
 <div class="columns">
 <div class="column right" style="width:60%;">
-<p><span style="color:teal"><strong>The Materials Modeling Landscape</strong></span></p>
-<p><span style="color:gray"><em>(An introduction for Graduate Students)</em></span></p>
+<p><span style="color:teal"><strong>The Materials Modeling Landscape</strong></span><br> <span style="color:gray"><em>(An introduction for Graduate Students)</em></span></p>
 </div><div class="column right" style="width:5%;">
-<div data-id="box1" style="background: #2780e3; width: 15px; height: 165px; border-radius: 0px; align: center;">
+<div data-id="box1" style="background: #bcd6d6; width: 15px; height: 135px; border-radius: 0px; align: right; margin: 0em 0em 0em 1.1em;">
 
 </div>
 </div><div class="column left" style="width:35%;">
 <div class="ddm" style="margin:0">
-<div class="dd-head" onclick="toggleBox(this)" style="color:black; background:white">
-<p>Sheharyar Pervez</p>
-<p><span style="color:gray; font-size:0.9em">DRN Group, GIK Institute</span></p>
+<div class="dd-head" onclick="toggleBox(this)" style="color:black; background:white;">
+<p><span style="font-size:1.2em">Sheharyar Pervez</span><br> <span style="color:gray; font-size:1em; font-style: normal;">DRN Group, GIK Institute</span></p>
 </div>
-<div class="dd-box" style="background:LightCoral; color:black">
+<!-- :::{.dd-box style="background:LightCoral; color:black"} -->
 <!-- [(She.HER.yar)]{style="font-size:0.7em"}
 
 
 [She = **She**ll; har = **Her**;]{style="font-size:0.7em"} \
 [yar = **yar**n]{style="font-size:0.7em"} \
 [But feel free to say it anyway you like.]{style="font-size:0.7em"} -->
-</div>
+<!-- ::: -->
 </div>
 </div></div>
 </section>
@@ -320,6 +389,14 @@
 </div>
 <div class="ddm">
 <div class="dd-head" onclick="toggleBox(this)">
+<p>Myth: Materials modeling is only at the atomic level</p>
+</div>
+<div class="dd-box">
+<p>Materials modeling spans every scale — from electrons and atoms to devices, factories, and entire engineering systems.</p>
+</div>
+</div>
+<div class="ddm">
+<div class="dd-head" onclick="toggleBox(this)">
 <p>Myth 5: Machine learning will replace physics</p>
 </div>
 <div class="dd-box">
@@ -356,7 +433,395 @@ Modeling is a decision-making tool, not magic.</p>
 </div>
 </div>
 </section>
+<section id="the-landscape" class="slide level2 scrollable">
+<h2>The Landscape</h2>
+<div class="ddm">
+<div class="ddm-head" onclick="toggleBox(this)" style="">
+<p>Why we care about materials and what is Materials Modeling?</p>
+</div>
+<div class="ddm-box">
+<p>We care about materials becasue they are in our phones, batteries, solar panels, medicines, cars, and what not.</p>
+<p><r>Materials Modeling</r> is the use of <strong>physics-based or data-driven methods</strong> to understand and predict material behavior.</p>
+<p><strong>Core idea:</strong> Replace expensive experiments with <strong>predictive computation</strong></p>
+</div>
+</div>
+<div class="ddm">
+<div class="ddm-head" onclick="toggleBox(this)" style="">
+<p>Why it matters</p>
+</div>
+<div class="ddm-box">
+<p>Materials modeling: - Bridges <strong>theory ↔︎ experiment ↔︎ application</strong> - Enables: - Property prediction before synthesis - Design of new materials - Understanding mechanisms at multiple scales</p>
+<ul>
+<li>Reduces cost and time in materials discovery</li>
+<li>Enables exploration of <strong>impossible-to-test conditions</strong></li>
+<li>Drives innovation in:
+<ul>
+<li>Energy materials</li>
+<li>Semiconductors</li>
+<li>Biomaterials</li>
+<li>Nanotechnology</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div class="ddm">
+<div class="ddm-head" onclick="toggleBox(this)" style="">
+<p>The multiscale nature of modeling</p>
+</div>
+<div class="ddm-box">
+<ul>
+<li>Materials behavior spans:
+<ul>
+<li><strong>Electrons → atoms → microstructure → devices</strong></li>
+</ul></li>
+<li>No single method covers everything</li>
+</ul>
+<p><strong>Key challenge:</strong> Linking scales consistently</p>
+<p>Where you start depends on your question and background. What you need to know depends on what you want to do. You can start with a simple model and build up as needed. The important thing is to understand the assumptions and limitations of your chosen method.</p>
+</div>
+</div>
+<div class="ddm">
+<div class="ddm-head" onclick="toggleBox(this)">
+<p>Some active research groups</p>
+</div>
+<div class="ddm-box">
+<ul>
+<li>Electronic Structure / DFT / Quantum Materials
+<ul>
+<li>Materials Project — High-throughput DFT database and computational materials discovery platform led from Lawrence Berkeley National Laboratory.</li>
+<li>OQMD — Open Quantum Materials Database; large-scale DFT infrastructure.</li>
+<li>NOMAD Laboratory — Major FAIR-data and materials informatics effort.</li>
+<li>Center for Computational Study of Excited-State Phenomena in Energy Materials (C2SEPEM) — Advanced excited-state and electronic-structure modeling.</li>
+</ul></li>
+<li>Machine Learning for Materials
+<ul>
+<li>FAIR Chemistry — AI foundation models for molecules and materials.</li>
+<li>DeepMind — Active in materials discovery and graph neural network methods.</li>
+<li>Microsoft Research — Strong activity in AI-guided materials design and sustainability modeling.</li>
+<li>Toyota Research Institute — ML-driven battery and materials discovery efforts.</li>
+</ul></li>
+<li>Special Materials (MOFs / Porous Materials / Energy Materials…)
+<ul>
+<li>Wilmer Lab — High-throughput screening and ML for MOFs.</li>
+<li>Snurr Research Group — Computational nanoporous materials and adsorption modeling.</li>
+<li>Smit Group — Molecular simulation of porous materials and separations.</li>
+<li>Kulik Group — ML + electronic structure for catalysts and framework materials.</li>
+</ul></li>
+<li>Multiscale / Molecular Dynamics / Computational Mechanics
+<ul>
+<li>LAMMPS Development Team — Central hub for atomistic simulation methods and MD workflows.</li>
+<li>Materials Theory Group at Imperial College London — Active in atomistic and mesoscale modeling.</li>
+<li>Max Planck Institute for Iron Research — Strong computational materials science division spanning DFT to continuum modeling.</li>
+</ul></li>
+<li>Europe-Based Centers Strong for MSCA/Postdoc Opportunities
+<ul>
+<li>Cecam — Major European network for computational materials science.</li>
+<li>Institute of Science and Technology Austria — Growing computational materials and ML ecosystem.</li>
+<li>Forschungszentrum Jülich — Large-scale HPC and materials modeling programs.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div class="ddm">
+<div class="ddm-head" onclick="toggleBox(this)" style="">
+<p>How you can contribute</p>
+</div>
+<div class="ddm-box">
+<div class="ddp">
+<div class="ddp-head" onclick="toggleBox(this)">
+<p>METHOD Developer</p>
+</div>
+<div class="ddp-box">
+<p>Creates, refines, and validates the theoretical frameworks, algorithms, and software tools used to simulate and predict the behavior of materials</p>
+</div>
+</div>
+<div class="ddp">
+<div class="ddp-head" onclick="toggleBox(this)">
+<p>CODE Builder</p>
+</div>
+<div class="ddp-box">
+<p>Creates, maintains, and optimizes software used to simulate the physical and chemical properties of materials at atomic, molecular, or continuum scales</p>
+</div>
+</div>
+<div class="ddp">
+<div class="ddp-head" onclick="toggleBox(this)">
+<p>END User</p>
+</div>
+<div class="ddp-box">
+<p>Applies computational simulation software to understand, design, or optimize materials without necessarily developing the underlying simulation code themselves</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="major-branches-of-materials-modeling" class="slide level2">
+<h2>Major Branches of Materials Modeling</h2>
+<div class="columns">
+<div class="column">
+<!-- column 1 -->
+<div class="ddm">
+<div class="dd-head" onclick="toggleBox(this)">
+<p>Quantum Mechanical Methods</p>
+</div>
+<div class="dd-box">
+<ul>
+<li>Based on <strong>first principles (ab initio)</strong></li>
+<li>Examples:
+<ul>
+<li>Density Functional Theory (DFT)</li>
+</ul></li>
+<li>Used for:
+<ul>
+<li>Electronic structure</li>
+<li>Band structure</li>
+<li>Defects</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div class="ddm">
+<div class="dd-head" onclick="toggleBox(this)">
+<p>Atomistic Simulations</p>
+</div>
+<div class="dd-box">
+<ul>
+<li>Treat atoms explicitly</li>
+<li>Examples:
+<ul>
+<li>Molecular Dynamics (MD)</li>
+<li>Monte Carlo</li>
+</ul></li>
+<li>Used for:
+<ul>
+<li>Diffusion</li>
+<li>Thermal properties</li>
+<li>Structural evolution</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div class="ddm">
+<div class="dd-head" onclick="toggleBox(this)">
+<p>Mesoscale Modeling</p>
+</div>
+<div class="dd-box">
+<ul>
+<li>Coarse-grained descriptions</li>
+<li>Examples:
+<ul>
+<li>Phase-field models</li>
+<li>Kinetic Monte Carlo</li>
+</ul></li>
+<li>Used for:
+<ul>
+<li>Microstructure evolution</li>
+<li>Grain growth</li>
+<li>Defect dynamics</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div><div class="column">
+<!-- column 2 -->
+<div class="ddm">
+<div class="dd-head" onclick="toggleBox(this)">
+<p>Continuum Modeling</p>
+</div>
+<div class="dd-box">
+<ul>
+<li>Treat material as continuous medium</li>
+<li>Examples:
+<ul>
+<li>Finite Element Method (FEM)</li>
+</ul></li>
+<li>Used for:
+<ul>
+<li>Mechanical behavior</li>
+<li>Device-scale simulations</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div class="ddm">
+<div class="dd-head" onclick="toggleBox(this)">
+<p>Data-Driven Modeling</p>
+</div>
+<div class="dd-box">
+<ul>
+<li>Machine Learning + Materials Science</li>
+<li>Examples:
+<ul>
+<li>Property prediction models</li>
+<li>Generative materials design</li>
+</ul></li>
+<li>Key shift:
+<ul>
+<li>From <strong>physics-only → physics + data</strong></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- column 2 end -->
+</div></div>
+</section>
 <section id="section-3" class="slide level2 scrollable">
+<h2></h2>
+<div class="ddm">
+<div class="ddm-head" onclick="toggleBox(this)">
+<p>The Problem with Quantum Mechanics</p>
+</div>
+<div class="ddm-box">
+<p>Atoms and electrons obey <strong>quantum mechanics</strong>.</p>
+<p>BUT…</p>
+<p>For a material with many electrons:</p>
+<ul>
+<li>Every electron interacts with every other electron</li>
+<li>The equations become enormously complicated</li>
+<li>Exact solutions quickly become impossible</li>
+</ul>
+<div class="fragment">
+<p>Even a tiny crystal contains <strong>billions upon billions</strong> of electrons.</p>
+</div>
+</div>
+</div>
+<div class="ddm">
+<div class="ddm-head" onclick="toggleBox(this)">
+<p>So What Do Scientists Do?</p>
+</div>
+<div class="ddm-box">
+<p>We use <strong>approximations</strong> that are:</p>
+<ul>
+<li>Accurate enough to predict real behavior</li>
+<li>Efficient enough to run on computers</li>
+</ul>
+<p>This is where <strong>DFT</strong> comes in.</p>
+</div>
+</div>
+<div class="ddm">
+<div class="ddm-head" onclick="toggleBox(this)">
+<p>DFT meaning Discrete Fourier Transform?</p>
+</div>
+<div class="ddm-box">
+<p>No.&nbsp;DFT = Density Functional Theory</p>
+<p>A computational method used to calculate the properties of materials from quantum mechanics.</p>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>Instead of tracking every electron individually, DFT focuses on the <strong>electron density</strong>.</p>
+</div>
+</div>
+</div>
+<p>Rather than asking:</p>
+<blockquote>
+<p>“Where is each electron?”</p>
+</blockquote>
+<p>DFT asks:</p>
+<blockquote>
+<p>“How much electronic charge exists at each point in space?”</p>
+</blockquote>
+</div>
+</div>
+<div class="ddm">
+<div class="ddm-head" onclick="toggleBox(this)">
+<p>Explain like I’m 5</p>
+</div>
+<div class="ddm-box">
+<p>Imagine trying to study traffic in a city.</p>
+<div class="columns">
+<div class="column">
+<p>Impossible approach</p>
+<p>Track every single car individually.</p>
+</div><div class="column">
+<p>Smarter approach</p>
+<p>Study the <strong>traffic density</strong> instead.</p>
+<ul>
+<li>Where is traffic concentrated?</li>
+<li>How does it flow?</li>
+<li>Where are the bottlenecks?</li>
+</ul>
+</div></div>
+<p>DFT does something similar for electrons.</p>
+<p><span style="align:center; background-color: #f0f0f0; padding: 1em; border-radius: 5px;">The Central Idea of DFT</span></p>
+<p>The electron density contains enough information to determine:</p>
+<ul>
+<li>Total energy</li>
+<li>Bonding</li>
+<li>Magnetism</li>
+<li>Electrical behavior</li>
+<li>Optical properties</li>
+</ul>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="fragment">
+<p>That idea was revolutionary.</p>
+</div>
+<div class="fragment">
+<p>DFT Became important because it allows scientists to compute:</p>
+<div class="columns">
+<div class="column" style="width:35%;">
+<div id="box1" style="align:center; color: white; background-color: #708D81; padding: 1em; border-radius: 5px;">
+<p>Band structures<br>
+Charge density<br>
+Magnetic moments<br>
+Formation energies<br>
+Vibrational properties<br>
+Reaction pathways</p>
+</div>
+</div><div class="column" style="width:15%;">
+<p>so that they can…</p>
+</div><div class="column" style="width:40%;">
+<div class="fragment">
+<div id="box2" style="align:center; color: white; background-color: #ce6454; padding: 1em; border-radius: 5px;">
+<p>Design materials before experiments<br>
+Predict new compounds<br>
+Study defects and impurities &nbsp; Understand catalysts &nbsp; Explore battery materials<br>
+Investigate quantum materials</p>
+</div>
+</div>
+</div></div>
+</div>
+<div class="fragment">
+<div style="align:left; color: white; background-color: #B796AC; padding: 1em; margin: 1em; border-radius: 5px;">
+<p>Example: Silicon</p>
+<p>DFT can help explain:</p>
+<ul>
+<li>Why silicon is a semiconductor</li>
+<li>How dopants modify conductivity</li>
+<li>Why transistors work</li>
+</ul>
+<p>Modern electronics heavily depend on ideas enabled by DFT calculations.</p>
+</div>
+</div>
+</section>
+<section id="section-4" class="slide level2 scrollable">
+<h2></h2>
+</section>
+<section id="what-a-typical-qe-workflow-is-like" class="slide level2 scrollable">
+<h2>What a typical QE Workflow is like</h2>
+<p>QE is not one code but a suite of codes.</p>
+<!-- ![](figs/quantum_espresso_workflow.svg){width=1200px} -->
+<!-- <img src="figs/quantum_espresso_workflow.svg" width="600px"> -->
+
+<img data-src="figs/quantum_espresso_workflow.png" width="1200" class="r-stretch"><p>An understanding of each aspect is crucial.</p>
+</section>
+<section id="what-is-working-with-ase-like" class="slide level2">
+<h2>What is working with ASE like</h2>
+</section>
+<section id="section-5" class="slide level2 scrollable">
+<h2></h2>
+<iframe src="figs/qe_workflow.html" width="150%" height="100%" style="border:none;">
+</iframe>
+</section>
+<section id="section-6" class="slide level2 scrollable">
 <h2></h2>
 <style>
 .figure-caption {
@@ -636,7 +1101,7 @@ Figure&nbsp;1: The five methods of computational materials science, arranged lef
 </section>
 <section id="method-summary" class="slide level2">
 <h2>Method summary</h2>
-<div id="tbl-methods" class="quarto-float quarto-figure quarto-figure-center" data-tbl-colwidths="[15,28,20,7,30]" style="font-size: 0.67em; margin: 1rem auto;">
+<div id="tbl-methods" class="quarto-float quarto-figure quarto-figure-center" style="font-size: 0.67em; margin: 1rem auto;" data-tbl-colwidths="[15,28,20,7,30]">
 <figure class="quarto-float quarto-float-tbl">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-methods-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;1: Key properties of each method
@@ -808,169 +1273,6 @@ Table&nbsp;1: Key properties of each method
 </div>
 </div>
 </section>
-<section id="the-landscape" class="slide level2 scrollable">
-<h2>The Landscape</h2>
-<div class="ddm">
-<div class="dd-head" onclick="toggleBox(this)" style="">
-<p>Why we care about materials and what is Materials Modeling?</p>
-</div>
-<div class="dd-box">
-<p>We care about materials becasue they are in our phones, batteries, solar panels, medicines, cars, and what not.</p>
-<p><r>Materials Modeling</r> is the use of <strong>physics-based or data-driven methods</strong> to understand and predict material behavior</p>
-<ul>
-<li>Bridges <strong>theory ↔︎ experiment ↔︎ application</strong></li>
-<li>Enables:
-<ul>
-<li>Property prediction before synthesis</li>
-<li>Design of new materials</li>
-<li>Understanding mechanisms at multiple scales</li>
-</ul></li>
-</ul>
-<p><strong>Core idea:</strong> Replace expensive experiments with <strong>predictive computation</strong></p>
-</div>
-</div>
-<div class="ddm">
-<div class="dd-head" onclick="toggleBox(this)" style="">
-<p>Why It Matters</p>
-</div>
-<div class="dd-box">
-<ul>
-<li>Reduces cost and time in materials discovery</li>
-<li>Enables exploration of <strong>impossible-to-test conditions</strong></li>
-<li>Drives innovation in:
-<ul>
-<li>Energy materials</li>
-<li>Semiconductors</li>
-<li>Biomaterials</li>
-<li>Nanotechnology</li>
-</ul></li>
-</ul>
-</div>
-</div>
-<div class="ddm">
-<div class="dd-head" onclick="toggleBox(this)" style="">
-<p>The Multiscale Nature</p>
-</div>
-<div class="dd-box">
-<ul>
-<li>Materials behavior spans:
-<ul>
-<li><strong>Electrons → atoms → microstructure → devices</strong></li>
-</ul></li>
-<li>No single method covers everything</li>
-</ul>
-<p><strong>Key challenge:</strong> Linking scales consistently</p>
-<p>Where you start depends on your question and background. What you need to know depends on what you want to do. You can start with a simple model and build up as needed. The important thing is to understand the assumptions and limitations of your chosen method.</p>
-</div>
-</div>
-<div class="ddm">
-<div class="dd-head" onclick="toggleBox(this)" style="">
-<p>How you can contribute</p>
-</div>
-<div class="dd-box">
-<ul>
-<li>Materials modeling is a <strong>team sport</strong>. It requires collaboration between theorists, experimentalists, and data scientists.</li>
-<li>You can contribute by:
-<ul>
-<li>Developing new methods</li>
-<li>Applying existing methods to new problems</li>
-<li>Validating models with experiments</li>
-<li>Sharing data and code openly</li>
-</ul></li>
-</ul>
-</div>
-</div>
-</section>
-<section class="slide level2">
-
-<p>Major Branches of Materials Modeling</p>
-<p>#Quantum Mechanical Methods</p>
-<ul>
-<li>Based on <strong>first principles (ab initio)</strong></li>
-<li>Examples:
-<ul>
-<li>Density Functional Theory (DFT)</li>
-</ul></li>
-<li>Used for:
-<ul>
-<li>Electronic structure</li>
-<li>Band structure</li>
-<li>Defects</li>
-</ul></li>
-</ul>
-</section>
-<section class="slide level2">
-
-<p>Major Branches (continued)</p>
-<p>#Atomistic Simulations</p>
-<ul>
-<li>Treat atoms explicitly</li>
-<li>Examples:
-<ul>
-<li>Molecular Dynamics (MD)</li>
-<li>Monte Carlo</li>
-</ul></li>
-<li>Used for:
-<ul>
-<li>Diffusion</li>
-<li>Thermal properties</li>
-<li>Structural evolution</li>
-</ul></li>
-</ul>
-</section>
-<section class="slide level2">
-
-<p>Major Branches (continued)</p>
-<p>#Mesoscale Modeling</p>
-<ul>
-<li>Coarse-grained descriptions</li>
-<li>Examples:
-<ul>
-<li>Phase-field models</li>
-<li>Kinetic Monte Carlo</li>
-</ul></li>
-<li>Used for:
-<ul>
-<li>Microstructure evolution</li>
-<li>Grain growth</li>
-<li>Defect dynamics</li>
-</ul></li>
-</ul>
-</section>
-<section class="slide level2">
-
-<p>Major Branches (continued)</p>
-<p>#Continuum Modeling</p>
-<ul>
-<li>Treat material as continuous medium</li>
-<li>Examples:
-<ul>
-<li>Finite Element Method (FEM)</li>
-</ul></li>
-<li>Used for:
-<ul>
-<li>Mechanical behavior</li>
-<li>Device-scale simulations</li>
-</ul></li>
-</ul>
-</section>
-<section class="slide level2">
-
-<p>Emerging Direction</p>
-<p>#Data-Driven Modeling</p>
-<ul>
-<li>Machine Learning + Materials Science</li>
-<li>Examples:
-<ul>
-<li>Property prediction models</li>
-<li>Generative materials design</li>
-</ul></li>
-<li>Key shift:
-<ul>
-<li>From <strong>physics-only → physics + data</strong></li>
-</ul></li>
-</ul>
-</section>
 <section id="skill-set" class="slide level2 scrollable">
 <h2>Skill Set</h2>
 </section>
@@ -1096,7 +1398,6 @@ Tabs:
     - PINNs for  
 
  -->
-<p>Continuation of Ms.&nbsp;Shaheen’s work:</p>
 <ul>
 <li>Phase Transitions (Motivation)
 <ul>
@@ -1182,25 +1483,12 @@ Tabs:
 <p><strong>Hypothesis:</strong> Periodic driving renormalizes effective Hamiltonian parameters, enabling topological phases absent in equilibrium.</p>
 </div>
 </div>
-</section>
-<section id="about-me" class="slide level2 scrollable">
-<h2>About me</h2>
-<div class="ddm">
-<div class="dd-head" onclick="toggleBox(this)">
-<p>Academic and Professional</p>
-</div>
-<div class="dd-box">
-<div class="columns">
-<div class="column">
-<p>abc</p>
-</div><div class="column">
-<p>xyz</p>
-</div></div>
-</div>
-</div>
+<!-- ## About me {.scrollable}
+
+{{< include _aboutme.qmd >}} -->
 <!-- The end -->
 </section>
-<section id="section-4" class="slide level2 center">
+<section id="section-7" class="slide level2 center">
 <h2></h2>
 <pre><p style="margin-left: 5em;font-family: GS_L; font-variant: small-caps; font-size:1.5em"><b>The End</b></p></pre><b>
 </b>
@@ -1223,6 +1511,7 @@ Tabs:
   <script src="index_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
   <script src="index_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-leaderline/reveal-leader-line.js"></script>
   <script src="index_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -1398,7 +1687,7 @@ Tabs:
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -1415,7 +1704,7 @@ Tabs:
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealLeaderline, QuartoSupport,
 
           RevealMath,
           RevealNotes,
@@ -1472,14 +1761,13 @@ Tabs:
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-          const outerScaffold = trigger.parentElement.cloneNode(true);
-          const codeEl = outerScaffold.querySelector('code');
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
             }
-          }
-          return codeEl.innerText;
+            return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

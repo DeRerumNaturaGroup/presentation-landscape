@@ -49,11 +49,11 @@
       display: inline-block; /* Make it inline-block */
       margin-left: 0em;
       padding: 0 0 0 0;
-      color: black;
+      color: rgb(0, 52, 52);
       font-size: 1em;
       font-weight: bold;
       cursor: pointer;
-
+      line-height: 1;   /* helps tighten text spacing */
     }
 
     .ddm-head:after {
@@ -61,17 +61,19 @@
       display: block;
       width: 102%; /* Set width to auto to match text width */
       height: 5px;
-      margin: 0 auto;
-      background: linear-gradient(to right, LightPink 100%, transparent 50%);
+      margin: -0.5em auto 0 auto;  /* reduce vertical gap */
+      background: linear-gradient(to right, rgb(255, 144, 161) 100%, transparent 50%);
     }
 
     .ddm-box {
       padding-top: 5px;
       padding-left: 10px;
-      color: black;
-      background-color: white;
+      color: rgb(31, 31, 31);
+      background-color: #efefef;
       border-bottom-right-radius: 10px;
       display: none; /* Initially hide the container */
+      font-size: 1em;
+
     }
 
     .lowkey{

@@ -7,8 +7,6 @@ Tabs:
 
  -->
 
-Continuation of Ms. Shaheen's work:
-
 
 - Phase Transitions
 (Motivation)

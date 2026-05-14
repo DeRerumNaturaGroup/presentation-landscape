@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>title</title>
+<title>dft</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,17 +23,17 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="_title_files/libs/clipboard/clipboard.min.js"></script>
-<script src="_title_files/libs/quarto-html/quarto.js" type="module"></script>
-<script src="_title_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="_title_files/libs/quarto-html/popper.min.js"></script>
-<script src="_title_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="_title_files/libs/quarto-html/anchor.min.js"></script>
-<link href="_title_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="_title_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="_title_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="_title_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="_title_files/libs/bootstrap/bootstrap-8af1d776dba07443d81be56748619c85.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="_dft_files/libs/clipboard/clipboard.min.js"></script>
+<script src="_dft_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="_dft_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="_dft_files/libs/quarto-html/popper.min.js"></script>
+<script src="_dft_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="_dft_files/libs/quarto-html/anchor.min.js"></script>
+<link href="_dft_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="_dft_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="_dft_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="_dft_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="_dft_files/libs/bootstrap/bootstrap-8af1d776dba07443d81be56748619c85.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -47,40 +47,141 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="section" class="level2 center" data-background-color="white">
-<h2 class="center anchored" data-background-color="white" data-anchor-id="section"></h2>
-<!-- ![](figs/logowhite.png){width=2in} -->
-<!-- <img src="figs/logowhite.png" style="display: flex; align-items: center; width: 25%; height: auto;"> -->
-<p><img src="figs/logowhite.png" style="display: block; margin: 0 auto; width: 20%; height: auto;"></p>
-</section>
-<section id="section-1" class="level1">
-<h1></h1>
-<p><br> <br></p>
+<div class="ddm">
+<div class="ddm-head" onclick="toggleBox(this)">
+<p>The Problem with Quantum Mechanics</p>
+</div>
+<div class="ddm-box">
+<p>Atoms and electrons obey <strong>quantum mechanics</strong>.</p>
+<p>BUT…</p>
+<p>For a material with many electrons:</p>
+<ul>
+<li>Every electron interacts with every other electron</li>
+<li>The equations become enormously complicated</li>
+<li>Exact solutions quickly become impossible</li>
+</ul>
+<div class="fragment">
+<p>Even a tiny crystal contains <strong>billions upon billions</strong> of electrons.</p>
+</div>
+</div>
+</div>
+<div class="ddm">
+<div class="ddm-head" onclick="toggleBox(this)">
+<p>So What Do Scientists Do?</p>
+</div>
+<div class="ddm-box">
+<p>We use <strong>approximations</strong> that are:</p>
+<ul>
+<li>Accurate enough to predict real behavior</li>
+<li>Efficient enough to run on computers</li>
+</ul>
+<p>This is where <strong>DFT</strong> comes in.</p>
+</div>
+</div>
+<div class="ddm">
+<div class="ddm-head" onclick="toggleBox(this)">
+<p>DFT meaning Discrete Fourier Transform?</p>
+</div>
+<div class="ddm-box">
+<p>No.&nbsp;DFT = Density Functional Theory</p>
+<p>A computational method used to calculate the properties of materials from quantum mechanics.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Instead of tracking every electron individually, DFT focuses on the <strong>electron density</strong>.</p>
+</div>
+</div>
+<p>Rather than asking:</p>
+<blockquote class="blockquote">
+<p>“Where is each electron?”</p>
+</blockquote>
+<p>DFT asks:</p>
+<blockquote class="blockquote">
+<p>“How much electronic charge exists at each point in space?”</p>
+</blockquote>
+</div>
+</div>
+<div class="ddm">
+<div class="ddm-head" onclick="toggleBox(this)">
+<p>Explain like I’m 5</p>
+</div>
+<div class="ddm-box">
+<p>Imagine trying to study traffic in a city.</p>
 <div class="columns">
-<div class="column right" style="width:60%;">
-<p><span style="color:teal"><strong>The Materials Modeling Landscape</strong></span></p>
-<p><span style="color:gray"><em>(An introduction for Graduate Students)</em></span></p>
-</div><div class="column right" style="width:5%;">
-<div data-id="box1" style="background: #bcd6d6; width: 15px; height: 165px; border-radius: 0px; align: right; margin: 0em 0em 0em 1.1em;">
-
-</div>
-</div><div class="column left" style="width:35%;">
-<div class="ddm" style="margin:0">
-<div class="dd-head" onclick="toggleBox(this)" style="color:black; background:white;">
-<p><span style="font-size:1.2em">Sheharyar Pervez</span><br> <span style="color:gray; font-size:0.9em; font-style: italic;">DRN Group, GIK Institute</span></p>
-</div>
-<!-- :::{.dd-box style="background:LightCoral; color:black"} -->
-<!-- [(She.HER.yar)]{style="font-size:0.7em"}
-
-
-[She = **She**ll; har = **Her**;]{style="font-size:0.7em"} \
-[yar = **yar**n]{style="font-size:0.7em"} \
-[But feel free to say it anyway you like.]{style="font-size:0.7em"} -->
-<!-- ::: -->
+<div class="column">
+<p>Impossible approach</p>
+<p>Track every single car individually.</p>
+</div><div class="column">
+<p>Smarter approach</p>
+<p>Study the <strong>traffic density</strong> instead.</p>
+<ul>
+<li>Where is traffic concentrated?</li>
+<li>How does it flow?</li>
+<li>Where are the bottlenecks?</li>
+</ul>
 </div>
 </div>
+<p>DFT does something similar for electrons.</p>
+<p><span style="align:center; background-color: #f0f0f0; padding: 1em; border-radius: 5px;">The Central Idea of DFT</span></p>
+<p>The electron density contains enough information to determine:</p>
+<ul>
+<li>Total energy</li>
+<li>Bonding</li>
+<li>Magnetism</li>
+<li>Electrical behavior</li>
+<li>Optical properties</li>
+</ul>
 </div>
-</section>
+</div>
+<hr>
+<div class="fragment">
+<p>That idea was revolutionary.</p>
+</div>
+<div class="fragment">
+<p>DFT Became important because it allows scientists to compute:</p>
+<div class="columns">
+<div class="column" style="width:35%;">
+<div id="box1" style="align:center; color: white; background-color: #708D81; padding: 1em; border-radius: 5px;">
+<p>Band structures<br>
+Charge density<br>
+Magnetic moments<br>
+Formation energies<br>
+Vibrational properties<br>
+Reaction pathways</p>
+</div>
+</div><div class="column" style="width:15%;">
+<p>so that they can…</p>
+</div><div class="column" style="width:40%;">
+<div class="fragment">
+<div id="box2" style="align:center; color: white; background-color: #ce6454; padding: 1em; border-radius: 5px;">
+<p>Design materials before experiments<br>
+Predict new compounds<br>
+Study defects and impurities &nbsp; Understand catalysts &nbsp; Explore battery materials<br>
+Investigate quantum materials <span class="leaderline" start="#box1" data-end="#box2" data-start-socket="right" data-lineid="example" size="5"></span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div style="align:center; color: white; background-color: #B796AC; padding: 1em; border-radius: 5px;">
+<p>Example: Silicon</p>
+<p>DFT can help explain:</p>
+<ul>
+<li>Why silicon is a semiconductor</li>
+<li>How dopants modify conductivity</li>
+<li>Why transistors work</li>
+</ul>
+<p>Modern electronics heavily depend on ideas enabled by DFT calculations.</p>
+</div>
+</div>
 
 </main>
 <!-- /main column -->

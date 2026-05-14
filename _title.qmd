@@ -13,31 +13,29 @@
 
 ::: columns 
 ::: {.column .right width="60%"}
-[**The Materials Modeling Landscape**]{style="color:teal"}
-
+[**The Materials Modeling Landscape**]{style="color:teal"}<br>
 [*(An introduction for Graduate Students)*]{style="color:gray"}
 
 :::
 :::{.column .right width="5%"}
-::: {data-id="box1" style="background: #2780e3; width: 15px; height: 165px; border-radius: 0px; align: center;"}
+::: {data-id="box1" style="background: #bcd6d6; width: 15px; height: 135px; border-radius: 0px; align: right; margin: 0em 0em 0em 1.1em;"}
 :::
 :::
 ::: {.column .left width="35%"}
 ::::{.ddm style="margin:0"}
-:::{.dd-head onclick="toggleBox(this)" style="color:black; background:white"}
-Sheharyar Pervez
-
-[DRN Group, GIK Institute]{style="color:gray; font-size:0.9em"}
+:::{.dd-head onclick="toggleBox(this)" style="color:black; background:white;"}
+[Sheharyar Pervez]{style="font-size:1.2em"}<br>
+[DRN Group, GIK Institute]{style="color:gray; font-size:1em; font-style: normal;"}
 
 :::
-:::{.dd-box style="background:LightCoral; color:black"}
+<!-- :::{.dd-box style="background:LightCoral; color:black"} -->
 <!-- [(She.HER.yar)]{style="font-size:0.7em"}
 
 
 [She = **She**ll; har = **Her**;]{style="font-size:0.7em"} \
 [yar = **yar**n]{style="font-size:0.7em"} \
 [But feel free to say it anyway you like.]{style="font-size:0.7em"} -->
-:::
+<!-- ::: -->
 ::::
 
 

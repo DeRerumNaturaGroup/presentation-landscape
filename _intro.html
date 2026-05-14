@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>title</title>
+<title>intro</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,17 +23,17 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="_title_files/libs/clipboard/clipboard.min.js"></script>
-<script src="_title_files/libs/quarto-html/quarto.js" type="module"></script>
-<script src="_title_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="_title_files/libs/quarto-html/popper.min.js"></script>
-<script src="_title_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="_title_files/libs/quarto-html/anchor.min.js"></script>
-<link href="_title_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="_title_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="_title_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="_title_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="_title_files/libs/bootstrap/bootstrap-8af1d776dba07443d81be56748619c85.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="_intro_files/libs/clipboard/clipboard.min.js"></script>
+<script src="_intro_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="_intro_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="_intro_files/libs/quarto-html/popper.min.js"></script>
+<script src="_intro_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="_intro_files/libs/quarto-html/anchor.min.js"></script>
+<link href="_intro_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="_intro_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="_intro_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="_intro_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="_intro_files/libs/bootstrap/bootstrap-8af1d776dba07443d81be56748619c85.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -47,40 +47,163 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="section" class="level2 center" data-background-color="white">
-<h2 class="center anchored" data-background-color="white" data-anchor-id="section"></h2>
-<!-- ![](figs/logowhite.png){width=2in} -->
-<!-- <img src="figs/logowhite.png" style="display: flex; align-items: center; width: 25%; height: auto;"> -->
-<p><img src="figs/logowhite.png" style="display: block; margin: 0 auto; width: 20%; height: auto;"></p>
-</section>
-<section id="section-1" class="level1">
-<h1></h1>
-<p><br> <br></p>
-<div class="columns">
-<div class="column right" style="width:60%;">
-<p><span style="color:teal"><strong>The Materials Modeling Landscape</strong></span></p>
-<p><span style="color:gray"><em>(An introduction for Graduate Students)</em></span></p>
-</div><div class="column right" style="width:5%;">
-<div data-id="box1" style="background: #bcd6d6; width: 15px; height: 165px; border-radius: 0px; align: right; margin: 0em 0em 0em 1.1em;">
-
+<div class="ddm">
+<div class="dd-head" onclick="toggleBox(this)" style="">
+<p>Why we care about materials and what is Materials Modeling?</p>
 </div>
-</div><div class="column left" style="width:35%;">
-<div class="ddm" style="margin:0">
-<div class="dd-head" onclick="toggleBox(this)" style="color:black; background:white;">
-<p><span style="font-size:1.2em">Sheharyar Pervez</span><br> <span style="color:gray; font-size:0.9em; font-style: italic;">DRN Group, GIK Institute</span></p>
-</div>
-<!-- :::{.dd-box style="background:LightCoral; color:black"} -->
-<!-- [(She.HER.yar)]{style="font-size:0.7em"}
-
-
-[She = **She**ll; har = **Her**;]{style="font-size:0.7em"} \
-[yar = **yar**n]{style="font-size:0.7em"} \
-[But feel free to say it anyway you like.]{style="font-size:0.7em"} -->
-<!-- ::: -->
+<div class="dd-box">
+<p>We care about materials becasue they are in our phones, batteries, solar panels, medicines, cars, and what not.</p>
+<p><r>Materials Modeling</r> is the use of <strong>physics-based or data-driven methods</strong> to understand and predict material behavior.</p>
+<p><strong>Core idea:</strong> Replace expensive experiments with <strong>predictive computation</strong></p>
 </div>
 </div>
+<div class="ddm">
+<div class="dd-head" onclick="toggleBox(this)" style="">
+<p>Why It Matters</p>
 </div>
-</section>
+<div class="dd-box">
+<p>Materials modeling: - Bridges <strong>theory ↔︎ experiment ↔︎ application</strong> - Enables: - Property prediction before synthesis - Design of new materials - Understanding mechanisms at multiple scales</p>
+<ul>
+<li>Reduces cost and time in materials discovery</li>
+<li>Enables exploration of <strong>impossible-to-test conditions</strong></li>
+<li>Drives innovation in:
+<ul>
+<li>Energy materials</li>
+<li>Semiconductors</li>
+<li>Biomaterials</li>
+<li>Nanotechnology</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div class="ddm">
+<div class="dd-head" onclick="toggleBox(this)" style="">
+<p>The Multiscale Nature</p>
+</div>
+<div class="dd-box">
+<ul>
+<li>Materials behavior spans:
+<ul>
+<li><strong>Electrons → atoms → microstructure → devices</strong></li>
+</ul></li>
+<li>No single method covers everything</li>
+</ul>
+<p><strong>Key challenge:</strong> Linking scales consistently</p>
+<p>Where you start depends on your question and background. What you need to know depends on what you want to do. You can start with a simple model and build up as needed. The important thing is to understand the assumptions and limitations of your chosen method.</p>
+</div>
+</div>
+<div class="ddm">
+<div class="dd-head" onclick="toggleBox(this)" style="">
+<p>How you can contribute</p>
+</div>
+<div class="dd-box">
+<div class="ddp">
+<div class="ddp-head" onclick="toggleBox(this)">
+<p>METHOD Developer</p>
+</div>
+<div class="ddp-box">
+<p>Creates, refines, and validates the theoretical frameworks, algorithms, and software tools used to simulate and predict the behavior of materials</p>
+</div>
+</div>
+<div class="ddp">
+<div class="ddp-head" onclick="toggleBox(this)">
+<p>CODE Builder</p>
+</div>
+<div class="ddp-box">
+<p>Creates, maintains, and optimizes software used to simulate the physical and chemical properties of materials at atomic, molecular, or continuum scales</p>
+</div>
+</div>
+<div class="ddp">
+<div class="ddp-head" onclick="toggleBox(this)">
+<p>END User</p>
+</div>
+<div class="ddp-box">
+<p>Applies computational simulation software to understand, design, or optimize materials without necessarily developing the underlying simulation code themselves</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+<p>Major Branches of Materials Modeling</p>
+<p>#Quantum Mechanical Methods</p>
+<ul>
+<li>Based on <strong>first principles (ab initio)</strong></li>
+<li>Examples:
+<ul>
+<li>Density Functional Theory (DFT)</li>
+</ul></li>
+<li>Used for:
+<ul>
+<li>Electronic structure</li>
+<li>Band structure</li>
+<li>Defects</li>
+</ul></li>
+</ul>
+<hr>
+<p>Major Branches (continued)</p>
+<p>#Atomistic Simulations</p>
+<ul>
+<li>Treat atoms explicitly</li>
+<li>Examples:
+<ul>
+<li>Molecular Dynamics (MD)</li>
+<li>Monte Carlo</li>
+</ul></li>
+<li>Used for:
+<ul>
+<li>Diffusion</li>
+<li>Thermal properties</li>
+<li>Structural evolution</li>
+</ul></li>
+</ul>
+<hr>
+<p>Major Branches (continued)</p>
+<p>#Mesoscale Modeling</p>
+<ul>
+<li>Coarse-grained descriptions</li>
+<li>Examples:
+<ul>
+<li>Phase-field models</li>
+<li>Kinetic Monte Carlo</li>
+</ul></li>
+<li>Used for:
+<ul>
+<li>Microstructure evolution</li>
+<li>Grain growth</li>
+<li>Defect dynamics</li>
+</ul></li>
+</ul>
+<hr>
+<p>Major Branches (continued)</p>
+<p>#Continuum Modeling</p>
+<ul>
+<li>Treat material as continuous medium</li>
+<li>Examples:
+<ul>
+<li>Finite Element Method (FEM)</li>
+</ul></li>
+<li>Used for:
+<ul>
+<li>Mechanical behavior</li>
+<li>Device-scale simulations</li>
+</ul></li>
+</ul>
+<hr>
+<p>Emerging Direction</p>
+<p>#Data-Driven Modeling</p>
+<ul>
+<li>Machine Learning + Materials Science</li>
+<li>Examples:
+<ul>
+<li>Property prediction models</li>
+<li>Generative materials design</li>
+</ul></li>
+<li>Key shift:
+<ul>
+<li>From <strong>physics-only → physics + data</strong></li>
+</ul></li>
+</ul>
+<hr>
 
 </main>
 <!-- /main column -->
