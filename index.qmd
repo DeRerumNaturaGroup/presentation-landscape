@@ -26,9 +26,6 @@ format:
         scrollable: true           
 include-in-header:
     - file: scripts/scripts.js
-    - file: scripts/LeaderLine/my-lines.js
-revealjs-plugins:
-  - leader-line
 editor: source
 ---
 
