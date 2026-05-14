@@ -43,7 +43,7 @@ editor: source
 
 {{< include _myths.qmd >}}
 
-<!-- ## The Landscape {.scrollable}
+## The Landscape {.scrollable}
 
 {{< include _intro.qmd >}}
 
@@ -52,45 +52,42 @@ editor: source
 {{< include _dft.qmd >}}
 
 
-## {.scrollable}
+<!-- ## {.scrollable}
 
-{{< include _ase_qe.qmd >}}
+{{< include _ase_qe.qmd >}} -->
 
-## {.scrollable}
+<!-- ## {.scrollable}
 
 <iframe 
   src="figs/qe_workflow.html"
   width="150%" 
   height="100%"
   style="border:none;">
-</iframe>
+</iframe> -->
 
-## {.scrollable}
+<!-- ## {.scrollable}
 
-{{< include _methods.qmd >}}
-
-
-
-## Common Pitfalls {.scrollable}
-
-{{< include _pitfalls.qmd >}}
+{{< include _methods.qmd >}} -->
 
 
-## Skill Set {.scrollable}
 
-{{< include _skills.qmd >}}
+<!-- ## Common Pitfalls {.scrollable}
 
-## Materials you can model {.scrollable}
+{{< include _pitfalls.qmd >}} -->
 
-{{< include _materials.qmd >}}
 
-## Open Projects {.scrollable}
+<!-- ## Skill Set {.scrollable}
+
+{{< include _skills.qmd >}} -->
+
+<!-- ## Materials you can model {.scrollable}
+
+{{< include _materials.qmd >}} -->
+
+<!-- ## Open Projects {.scrollable}
 
 {{< include _projects.qmd >}} -->
 
-<!-- ## About me {.scrollable}
-
-{{< include _aboutme.qmd >}} -->
 
 
 
