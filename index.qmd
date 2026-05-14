@@ -43,7 +43,7 @@ editor: source
 
 {{< include _myths.qmd >}}
 
-## The Landscape {.scrollable}
+<!-- ## The Landscape {.scrollable}
 
 {{< include _intro.qmd >}}
 
@@ -65,7 +65,7 @@ editor: source
   style="border:none;">
 </iframe>
 
-<!-- ## {.scrollable}
+## {.scrollable}
 
 {{< include _methods.qmd >}}
 
