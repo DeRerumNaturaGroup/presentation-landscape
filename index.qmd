@@ -24,7 +24,6 @@ format:
         ligthbox: auto
         engine: jupyter 
         scrollable: true           
-
 include-in-header:
     - file: scripts/scripts.js
     - file: scripts/LeaderLine/my-lines.js
@@ -66,7 +65,7 @@ editor: source
   style="border:none;">
 </iframe>
 
-## {.scrollable}
+<!-- ## {.scrollable}
 
 {{< include _methods.qmd >}}
 
@@ -87,7 +86,7 @@ editor: source
 
 ## Open Projects {.scrollable}
 
-{{< include _projects.qmd >}}
+{{< include _projects.qmd >}} -->
 
 <!-- ## About me {.scrollable}
 
